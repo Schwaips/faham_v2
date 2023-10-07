@@ -9,13 +9,12 @@
           <li class="splide__slide">
               <div class="slide-container">
                   <%= image_tag "big-quote" %>              
-                  <p><%= testimony.description.truncate(294) %></p>
-                  <p><%= testimony.author %> </p>
+                  <p class="description"><%= testimony.description.truncate(220) %></p>
+                  <p class="author"><%= testimony.author %> </p>
               </div>
           </li>
         <% end %>
       </ul>
     </div>
   </section>
-
 </div>
