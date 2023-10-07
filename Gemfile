@@ -57,6 +57,12 @@ gem "brakeman"
 # bundler-audit checks our dependencies for vulnerabilities
 gem "bundler-audit"
 
+# active admin 
+gem 'activeadmin'
+
+# authorization
+gem "pundit"
+
 # lograge changes Rails' logging to a more
 # traditional one-line-per-event format
 gem "lograge"
