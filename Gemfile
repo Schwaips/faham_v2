@@ -57,6 +57,9 @@ gem "brakeman"
 # bundler-audit checks our dependencies for vulnerabilities
 gem "bundler-audit"
 
+# cloudinary
+gem "cloudinary"
+
 # lograge changes Rails' logging to a more
 # traditional one-line-per-event format
 gem "lograge"

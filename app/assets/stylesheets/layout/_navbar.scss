@@ -4,17 +4,16 @@
   }
 
   position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: flex-start;
   gap: 24px;
   align-items: center;
-  top: 0;
   height: 64px;
-  width: 100%;
-  padding: 0 24px;
+  width: 100vw;
   background-color: $primary;
   border-bottom: 1px solid $grey-4;
-  z-index: 1000;
 
   &__link-container {
     display: flex;
@@ -26,7 +25,8 @@
 
   svg {
     height: 50px;
-    margin-right: 8px;
+    margin-right: 12px;
+    margin-left: 12px;
   }
 }
 
