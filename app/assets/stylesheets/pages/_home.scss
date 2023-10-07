@@ -207,68 +207,80 @@
   &__stepper {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
+    svg {
+      width: 400px;
+      height: 779px;
+    }
 
+    @include for-phone-only {
+      padding: 16px 24px;
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
     // TODO : in progress
-    .stepper-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Alignez les étapes à gauche */
-    }
+    // .stepper-container {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: flex-start; /* Alignez les étapes à gauche */
+    // }
 
-    .step {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      /* Supprimez z-index: -1; pour les étapes */
-      position: relative; /* Ajoutez ceci pour positionner les lignes de connexion */
+    // .step {
+    //   display: flex;
+    //   align-items: center;
+    //   margin-bottom: 20px;
+    //   /* Supprimez z-index: -1; pour les étapes */
+    //   position: relative; /* Ajoutez ceci pour positionner les lignes de connexion */
 
-      .step-circle {
-        width: 30px;
-        height: 30px;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        margin-right: 20px;
-      }
+    //   .step-circle {
+    //     width: 30px;
+    //     height: 30px;
+    //     background-color: #007bff;
+    //     color: #fff;
+    //     border-radius: 50%;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     font-weight: bold;
+    //     margin-right: 20px;
+    //   }
 
-      .step-title {
-        font-size: 16px;
-        color: #000;
-        z-index: 1;
-      }
+    //   .step-title {
+    //     font-size: 16px;
+    //     color: #000;
+    //     z-index: 1;
+    //   }
 
-      /* Ligne de connexion entre les étapes */
-      &::before {
-        content: '';
-        width: 2px;
-        height: 100%; /* Hauteur de la ligne */
-        background-color: #000;
-        position: absolute;
-        top: 30px;
-        left: 14%;
-        transform: translateX(-50%);
-        z-index: 0; /* Déplacez le z-index ici pour les lignes */
-      }
+    //   /* Ligne de connexion entre les étapes */
+    //   &::before {
+    //     content: '';
+    //     width: 2px;
+    //     height: 100%; /* Hauteur de la ligne */
+    //     background-color: #000;
+    //     position: absolute;
+    //     top: 30px;
+    //     left: 14%;
+    //     transform: translateX(-50%);
+    //     z-index: 0; /* Déplacez le z-index ici pour les lignes */
+    //   }
 
-      .step:not(:last-child)::before {
-        content: '';
-        width: 0px;
-        height: 100%; /* Hauteur de la ligne */
-        background-color: #000;
-        position: absolute;
-        top: 30px;
-        left: 14%;
-        transform: translateX(-50%);
-        z-index: 0; /* Déplacez le z-index ici pour les lignes */
-      }
-    }
+    //   .step:not(:last-child)::before {
+    //     content: '';
+    //     width: 0px;
+    //     height: 100%; /* Hauteur de la ligne */
+    //     background-color: #000;
+    //     position: absolute;
+    //     top: 30px;
+    //     left: 14%;
+    //     transform: translateX(-50%);
+    //     z-index: 0; /* Déplacez le z-index ici pour les lignes */
+    //   }
+    // }
   }
 }
 
@@ -282,12 +294,17 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 165px;
+    @include for-phone-only {
+      padding: 0 16px;
+    }
 
     gap: 12px;
     img {
-      // width:50px;
       height: 70px;
-      // height: 50px;
+      @include for-phone-only {
+        height: 50px;
+      }
     }
   }
 }
