@@ -2,6 +2,13 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+
+  &__labels-container {
+    margin-left: 130px;
+    @include for-phone-only {
+      margin-left: 24px;
+    }
+  }
 }
 
 .banner h1 {

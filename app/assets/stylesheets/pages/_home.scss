@@ -1,0 +1,41 @@
+.section-video-container {
+  position: relative;
+  padding-bottom: 24px;
+  min-height: 500px;
+  @include for-phone-only {
+    padding: 0 16px;
+  }
+
+  .title-container {
+    margin-top: 32px;
+    text-align: center;
+    width: 100%;
+    position: inherit;
+    z-index: 2;
+  }
+
+  .mission-label-container {
+    margin-top: 32px;
+    text-align: center;
+    width: 100%;
+    position: inherit;
+    z-index: 2;
+  }
+  .youtube-video-container {
+    margin-top: 32px;
+    z-index: 2;
+  }
+
+  .pastille-light {
+    position: absolute;
+    top: -47px;
+    left: -313px;
+    width: 500px;
+    z-index: 1;
+    @include for-phone-only {
+      display: none;
+    }
+    // height: 100%;
+  }
+
+}
