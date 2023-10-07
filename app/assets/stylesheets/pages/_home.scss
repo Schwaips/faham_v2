@@ -223,71 +223,13 @@
         height: auto;
       }
     }
-    // TODO : in progress
-    // .stepper-container {
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: flex-start; /* Alignez les étapes à gauche */
-    // }
-
-    // .step {
-    //   display: flex;
-    //   align-items: center;
-    //   margin-bottom: 20px;
-    //   /* Supprimez z-index: -1; pour les étapes */
-    //   position: relative; /* Ajoutez ceci pour positionner les lignes de connexion */
-
-    //   .step-circle {
-    //     width: 30px;
-    //     height: 30px;
-    //     background-color: #007bff;
-    //     color: #fff;
-    //     border-radius: 50%;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     font-weight: bold;
-    //     margin-right: 20px;
-    //   }
-
-    //   .step-title {
-    //     font-size: 16px;
-    //     color: #000;
-    //     z-index: 1;
-    //   }
-
-    //   /* Ligne de connexion entre les étapes */
-    //   &::before {
-    //     content: '';
-    //     width: 2px;
-    //     height: 100%; /* Hauteur de la ligne */
-    //     background-color: #000;
-    //     position: absolute;
-    //     top: 30px;
-    //     left: 14%;
-    //     transform: translateX(-50%);
-    //     z-index: 0; /* Déplacez le z-index ici pour les lignes */
-    //   }
-
-    //   .step:not(:last-child)::before {
-    //     content: '';
-    //     width: 0px;
-    //     height: 100%; /* Hauteur de la ligne */
-    //     background-color: #000;
-    //     position: absolute;
-    //     top: 30px;
-    //     left: 14%;
-    //     transform: translateX(-50%);
-    //     z-index: 0; /* Déplacez le z-index ici pour les lignes */
-    //   }
-    // }
   }
 }
 
 
 .section-trusted-me-container {
   background-color: $primary;
-  padding: 32px 0;
+  padding: 64px 0;
 
   &__customer-container {
     display: flex;
@@ -305,6 +247,23 @@
       @include for-phone-only {
         height: 50px;
       }
+    }
+  }
+}
+
+.section-testimonies-container {
+  min-height: 500px;
+  padding: 64px;
+  @include for-phone-only {
+    padding: 0 16px;
+  }
+
+  .slide-container {
+    background-color: $white;
+    padding: 32px;
+    box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.25);
+    img {
+      width: 40px;
     }
   }
 }
