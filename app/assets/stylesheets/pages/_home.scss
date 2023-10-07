@@ -54,9 +54,9 @@
 
   &__pastille-light {
     position: absolute;
-    top: -47px;
-    left: -313px;
-    width: 500px;
+    top: 14px;
+    left: -37px;
+    width: 207px;
     z-index: 1;
     @include for-phone-only {
       display: none;
@@ -66,9 +66,9 @@
 
   &__pastille-brown {
     position: absolute;
-    bottom: -100px;
-    right: 15px;
-    width: 300px;
+    bottom: -30px;
+    right: 24px;
+    width: 200px;
     z-index: 1;
     @include for-phone-only {
       display: none;
@@ -136,13 +136,38 @@
   }
 
   &__description-container {
-    padding: 32px 142px;
+    padding: 30px 142px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    position: relative;
 
+
+    .pastille-light {
+      position: absolute;
+      top: -47px;
+      left: -80px;
+      width: 200px;
+      z-index: 0;
+      @include for-phone-only {
+        display: none;
+      }
+      // height: 100%;
+    }
+
+    .pastille-brown {
+
+      position: absolute;
+      bottom: 6px;
+      right: 0px;
+      width: 134px;
+      z-index: 0;
+      @include for-phone-only {
+        display: none;
+      }
+    }
     @include for-phone-only {
       padding: 16px 24px;
     }
