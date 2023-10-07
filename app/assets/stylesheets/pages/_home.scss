@@ -252,14 +252,18 @@
 }
 
 .section-testimonies-container {
-  min-height: 500px;
-  padding: 64px;
+  padding: 64px 64px;
   @include for-phone-only {
-    padding: 0 16px;
+    padding: 32px 16px;
   }
 
   .slide-container {
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 223px;
+    max-height: 223px;
     padding: 32px;
     box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.25);
     img {

@@ -7,7 +7,7 @@ export default class extends Controller {
    console.log("hello")
 
    new Splide( '.splide', {
-    type   : 'loop',
+    type: 'loop',
     perPage: 3,
     perMove: 1,
     gap: '1rem',

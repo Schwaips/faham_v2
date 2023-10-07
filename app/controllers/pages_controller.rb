@@ -5,5 +5,6 @@ class PagesController < ApplicationController
     flash[:notice] = "Welcome to the home page!"
     
     @trusted_customers = TrustedCustomer.to_be_displayed
+    @testimonies = Testimony.all
   end
 end
