@@ -1,0 +1,75 @@
+
+.btn {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border-radius: 0.375rem;
+  background-origin: border-box; // Invisible borders with linear gradients
+  background-color: transparent;
+  border: solid 2px transparent;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: filter 400ms, color 200ms;
+
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    transition: filter 250ms, color 200ms;
+  }
+
+  // Modifiers will go there
+
+  &--primary {
+    color: $white;
+    background-image: linear-gradient(to right, hsl(350, 67%, 50%), hsl(10, 73%, 54%));
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: $white;
+      filter: saturate(1.4) brightness(115%);
+    }
+  }
+
+  &--secondary {
+    color: $white;
+    background-image: linear-gradient(to right, hsl(101, 45%, 56%), hsl(120, 45%, 56%));
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: $white;
+      filter: saturate(1.2) brightness(110%);
+    }
+  }
+
+  &--light {
+    color: $black;
+    background-color: hsl(0, 6%, 93%);
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: $black;
+      filter: brightness(92%);
+    }
+  }
+
+  &--dark {
+    color: $white;
+    border-color: $black;
+    background-color: $black;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: $white;
+    }
+  }
+}
