@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  font-family: 'Onest', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  font-style: normal;
+  @include for-phone-only {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  font-style: normal;
+  @include for-phone-only {
+    font-size: 20px;
+  }
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  @include for-phone-only {
+    font-size: 16px;
+  }
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+}
+
+a {
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration: none;
+  color: $primary;
+}
+.title1-impact {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 72px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 26px;
+  }
+}
+.title1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 24px;
+  }
+}
+.title2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 20px;
+  }
+}
+.subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 16px;
+  }
+}
+.paragraph-bold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.s-paragraph {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.s-paragraph-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  margin: 0;
+}
+.s-paragraph-bold {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.xs-paragraph {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.xs-paragraph-bold {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.xxs-paragraph {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.xxs-paragraph-light {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.m-paragraph-italic {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 16px;
+  }
+}
+.label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}

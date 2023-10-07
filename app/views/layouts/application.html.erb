@@ -7,10 +7,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= render "shared/css-cdn" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/flashes" %>
+    <%= render "shared/navbar" unless remove_navbar?(request.fullpath) %>
 
     <%= yield %>
   </body>

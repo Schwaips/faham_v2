@@ -1,0 +1,48 @@
+$primary: #6842EF;
+$primary-acc: #4021AE;
+$primary-light: #AA93FF;
+$primary-xlight: #E6DEFF;
+
+$secondary: #FFE604;
+$secondary-acc: #FFC804;
+$secondary-light: #FFF7B2;
+$secondary-xlight: #FFFCE0;
+
+$black: #0C0F3D;
+$grey-1: #7E7F8B;
+$grey-2: #D9DAE4;
+$grey-3: #F6F7FF;
+$grey-4: #0C0F3D1A;
+$white: #FFFFFF;
+
+$red-error: #ED4949;
+
+$colors:
+  "primary" $primary,
+  "primary-acc" $primary-acc,
+  "primary-light" $primary-light,
+  "primary-xlight" $primary-xlight,
+
+  "secondary" $secondary,
+  "secondary-acc" $secondary-acc,
+  "secondary-light" $secondary-light,
+  "secondary-xlight" $secondary-xlight,
+
+  // "teriary" $teriary,
+  // "teriary-acc" $teriary-acc,
+  // "teriary-light" $teriary-light,
+  // "teriary-xlight" $teriary-xlight,
+  // "teriary-xxlight" $teriary-xxlight,
+
+  "black" $black,
+  "grey-1" $grey-1,
+  "grey-2" $grey-2,
+  "grey-3" $grey-3,
+  "white" $white,
+  "red-error" $red-error;
+
+@each $name, $color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+}

@@ -1,0 +1,198 @@
+// .navbar-container{
+//   @include for-phone-only {
+//     display: none;
+//   }
+//   position: sticky;
+//   top: 0;
+//   height: 64px;
+//   width: 100vw;
+//   background-color: $white;
+//   border-bottom: 1px solid $grey-04;
+//   z-index: 1000;
+
+//   .navbar {
+//     display: flex;
+//     margin: auto;
+//     padding-inline: 16px;
+//     max-width: 1280px;
+//     height: 100%;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     .content-menu-left {
+//       display: flex;
+//       align-items: center;
+
+//       .logo {
+//         padding-right: 12px;
+//         border-right: 2px solid $white;
+//       }
+
+//       .text-left-menu {
+//         color: $white;
+//         margin-left: 12px;
+//       }
+//     }
+
+//     .content-menu-center {
+//       .menu-center-items {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-around;
+//         .menu-center-item {
+//           display: flex;
+//           align-items: center;
+//           color: $dark-01;
+//           padding: 0 32px;
+//           height: 64px; // height of the menu
+
+//           &:hover {
+//             color: $primary-acc-1;
+//             background-color: $primary-light-3;
+//             cursor: default;
+//           }
+
+//           &.active {
+//             background-color: $primary-light-3;
+//             color: $primary-acc-1;
+//           }
+//         }
+//       }
+//     }
+
+//     .content-menu-right {
+//       .user-drop-down {
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//         gap: 6px;
+
+//         i {
+//           color: $primary;
+//           opacity: 0.5;
+//         }
+//       }
+//     }
+
+//     .dropdown {
+//       position: relative;
+//       display: inline-block;
+//     }
+
+//     .dropdown-content {
+//       display: none;
+//       position: absolute;
+//       background-color: $white;
+//       min-width: 160px;
+//       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//       z-index: 1;
+//       border-radius: 10px;
+//       a {
+//         color: $dark-01;
+//         padding: 12px 16px;
+//         text-decoration: none;
+//         display: block;
+//       }
+//     }
+
+//     /* Change color of dropdown links on hover */
+//     .dropdown-content a:hover {
+//       background-color: $primary-light-3;
+//       color: $primary-acc-1;
+//       border-radius: 10px;
+//     }
+
+//     /* Show the dropdown menu on hover */
+//     .dropdown:hover .dropdown-content {
+//       display: block;
+//     }
+
+//     /* Change the background color of the dropdown button when the dropdown content is shown */
+//     // .dropdown:hover {
+//     //   // background-color: #3e8e41;
+//     // }
+//   }
+// }
+
+// .mobile-navbar-container{
+//   @include for-tablet-portrait-up {
+//     display: none;
+//   }
+//   position: fixed;
+//   display: flex;
+//   justify-content: center;
+//   bottom: 0;
+//   height: 64px;
+//   width: 100vw;
+//   background-color: $white;
+//   z-index: 1000;
+//   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+//   .mobile-navbar{
+//     position: relative;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     height: 100%;
+//     width: 100%;
+//     max-width: 600px;
+//   }
+
+//   .project, .user-list, .my-account, .my-account__button{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     width: 75px;
+
+//     p{
+//       font-size: 10px !important;
+//     }
+
+//     svg{
+//       padding: 5px 20px;
+//       border-radius: 25px;
+//       width: 24px;
+//       height: 24px;
+//     }
+
+//     &.active{
+//       p{
+//         color: $dark-01 !important;
+//       }
+//       svg{
+//         background-color: $primary-light-2;
+//         path{
+//           stroke: $primary-acc-1;
+//           &:first-child{
+//             fill: $primary-acc-1;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .my-account{
+//     position: relative;
+//   }
+//   .drop-up-menu{
+//     position: absolute;
+//     bottom: 72px;
+//     right: -12px;
+//     width: max-content;
+//     display: flex;
+//     flex-direction: column;
+//     border-radius: 8px;
+
+//     background-color: $white;
+//     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+//     a{
+//       color: $dark-01;
+//       padding: 12px 16px;
+
+//       &:last-child{
+//         color: $color-var-3;
+//       }
+//     }
+//   }
+// }
