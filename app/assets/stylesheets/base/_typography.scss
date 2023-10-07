@@ -10,6 +10,11 @@ h1 {
   @include for-phone-only {
     font-size: 24px;
   }
+
+  &.h1--light {
+    font-weight: 300;
+    
+  }
 }
 
 h2 {
@@ -22,11 +27,16 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 28px;
   font-style: normal;
+  line-height: 62px;
   @include for-phone-only {
     font-size: 16px;
+  }
+
+  &.h3--terracotta {
+    color: $teriary;
   }
 }
 
@@ -40,39 +50,11 @@ a {
   font-weight: 500;
   font-size: 14px;
   font-style: normal;
-  text-decoration: none;
-  color: $primary;
+  text-decoration: underline;
+  line-height: 30px;
+  color: $teriary;
 }
-.title1-impact {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 72px;
-  letter-spacing: 0.05em;
-  margin: 0;
-  @include for-phone-only {
-    font-size: 26px;
-  }
-}
-.title1 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 48px;
-  letter-spacing: 0.05em;
-  margin: 0;
-  @include for-phone-only {
-    font-size: 24px;
-  }
-}
-.title2 {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: 0.05em;
-  margin: 0;
-  @include for-phone-only {
-    font-size: 20px;
-  }
-}
+
 .subtitle {
   font-weight: 500;
   font-size: 20px;
@@ -90,6 +72,7 @@ a {
   letter-spacing: 0.05em;
   margin: 0;
 }
+
 .paragraph {
   font-weight: 400;
   font-size: 16px;
@@ -97,6 +80,32 @@ a {
   letter-spacing: 0.05em;
   margin: 0;
 }
+
+
+.xl-paragraph {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 16px;
+  }
+}
+
+.xxl-paragraph {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  margin: 0;
+  @include for-phone-only {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+
 .s-paragraph {
   font-weight: 400;
   font-size: 14px;

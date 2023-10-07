@@ -14,7 +14,8 @@
   <body>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" unless remove_navbar?(request.fullpath) %>
-
-    <%= yield %>
+    <div class="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

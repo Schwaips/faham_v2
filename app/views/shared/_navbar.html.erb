@@ -1,1 +1,11 @@
-<h1>Hello navbar</h1>
+<div class="navbar-container">
+  <%= link_to root_path do %>
+    <%= show_svg "faham-logo.svg" %>
+  <% end %>
+
+  <div class="navbar-container__link-container">
+    <%= link_to "Accueil", root_path %>
+    <%= link_to "Références scientifiques", root_path %>
+    <%= link_to "Blog", root_path %>
+  </div>
+</div>

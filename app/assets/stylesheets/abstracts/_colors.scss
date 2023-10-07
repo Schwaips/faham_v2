@@ -1,9 +1,12 @@
-$primary: #6842EF;
-$primary-acc: #4021AE;
+$primary: #FFF2E2;
+$secondary: #FACFBE;
+$teriary: #D26333;
+$quarternary: #3C4437;
+
+$primary-acc: #FACFBE;
 $primary-light: #AA93FF;
 $primary-xlight: #E6DEFF;
 
-$secondary: #FFE604;
 $secondary-acc: #FFC804;
 $secondary-light: #FFF7B2;
 $secondary-xlight: #FFFCE0;
@@ -27,6 +30,10 @@ $colors:
   "secondary-acc" $secondary-acc,
   "secondary-light" $secondary-light,
   "secondary-xlight" $secondary-xlight,
+
+  "teriary" $teriary,
+
+  "quarternary" $quarternary,
 
   // "teriary" $teriary,
   // "teriary-acc" $teriary-acc,
