@@ -190,3 +190,84 @@
     }
   }
 }
+
+.section-stepper-container {
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__leaf {
+    width: 350px;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__stepper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    svg {
+      width: 400px;
+      height: 779px;
+    }
+
+    @include for-phone-only {
+      padding: 16px 24px;
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+.section-trusted-me-container {
+  background-color: $primary;
+  padding: 64px 0;
+
+  &__customer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 165px;
+    @include for-phone-only {
+      padding: 0 16px;
+    }
+
+    gap: 12px;
+    img {
+      height: 70px;
+      @include for-phone-only {
+        height: 50px;
+      }
+    }
+  }
+}
+
+.section-testimonies-container {
+  padding: 64px 64px;
+  @include for-phone-only {
+    padding: 32px 16px;
+  }
+
+  .slide-container {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 223px;
+    max-height: 223px;
+    padding: 32px;
+    box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.25);
+    img {
+      width: 40px;
+    }
+  }
+}
