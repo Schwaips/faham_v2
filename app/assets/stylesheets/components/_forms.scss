@@ -1,0 +1,14 @@
+input[type=text] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #bfbdbc;
+  color: $grey-1;
+  flex-grow: 1;
+  font-family: Nunito,Helvetica,"sans-serif";
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  outline: none;
+  padding: 1vh 0;
+  width: 100%;
+}
