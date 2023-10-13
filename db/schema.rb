@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_082948) do
     t.string "last_name"
     t.string "email"
     t.string "company"
-    t.string "type"
+    t.string "customer_type"
     t.text "message"
     t.string "phone_number"
     t.boolean "newsletter", default: false

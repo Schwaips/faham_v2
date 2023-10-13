@@ -5,7 +5,7 @@ class CreateLeads < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :email
       t.string :company
-      t.string :type
+      t.string :customer_type
       t.text :message
       t.string :phone_number
       t.boolean :newsletter, default: false
