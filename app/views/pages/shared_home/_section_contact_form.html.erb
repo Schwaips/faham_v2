@@ -2,34 +2,45 @@
 
   <%= image_tag "estelle-contact.png", class:"section-contact-form-container__picture"%>
 
-  <div class="section-contact-form-container__form-container">
-    <h3 class="h3--terracotta align-self-start">Restons en contact!</h3>
+  <div class="section-contact-form-container__form_container">
+    <h3 class="h3--terracotta">Restons en contact!</h3>
     <p class="s-paragraph">Vous avez des questions, besoin d’informations supplémentaires, ou échanger autour d’un projet ?</p>
     <p class="s-paragraph">Contactez-moi en remplissant le formulaire ci-dessous !</p>
 
 
-    <%= simple_form_for :something do |f| %>
-      <%= f.input :first_name, label: "Prénom", placeholder: "Alan" %>
-      <%= f.input :last_name, label: "Nom", placeholder: "Turing" %>
-      <%= f.input :email, label: "Email", placeholder: "alan.turing@enigma.com" %>
-      <%= f.input :phone_number, label: "Téléphone", placeholder: "+33 1 23 45 67 89" %>
+    <%= simple_form_for @lead do |f| %>
+      <div class="two_inputs_row">
+        <%= f.input :first_name, label: "Prénom", placeholder: "Alan" %>
+        <%= f.input :last_name, label: "Nom", placeholder: "Turing" %>
+      </div>
+      <div class="two_inputs_row">
+        <%= f.input :email, label: "Email", placeholder: "alan.turing@enigma.com" %>
+        <%= f.input :phone_number, label: "Téléphone", placeholder: "+33 1 23 45 67 89" %>
+      </div>
       <%= f.input :company, label: "Société", placeholder: "Société Enigma" %>
-      <%= f.input :message, as: :text, placeholder: "Détaillez au mieux votre besoin. Sinon, pas de souci, nous établirons vos besoins ensemble :)" %>
-      <%= f.input :need, label: "Aidez-moi à mieux vous connaitre! Vous êtes...",
+      <%= f.input :message, as: :text, placeholder: "Détaillez au mieux votre besoin." %>
+      <%= f.input :type, label: "Vous êtes...",
                   as: :radio_buttons,
                   collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'category-wrapper',
+                  collection_wrapper_class: 'category-wrapper-contact-form',
                   item_wrapper_class: 'category-item',
                   input_html: { class: 'category-selector' },
-                  collection: ["he"] %>
+                  collection: Lead::TYPES,
+                  item_label_class: 'radio-button-check'
+                  %>
       <%= f.input :newsletter, label: " S'inscrire à la newsletter",
                   as: :boolean,
-                  input_html: { class: "boolean-button-form" } %>
-      <%= f.input :acceptation,
+                  input_html: { class: "toggle" } %>
+      <%= f.input :terms,
                   label: "En soumettant ce formulaire, vous acceptez que ces informations soient utilisées pour une éventuelle relation commerciale.",
-                  as: :boolean,  input_html: { class: "boolean-button-form" } %>
-        <%= f.submit "Envoyer", class: 'btn btn-primaire mb-5' %>
+                  as: :boolean,  input_html: { class: "toggle" } %>
+        <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
     <% end %>
   </div> 
   </div>
+
+
+<%#= simple_form_for :components do |f| %>
+  <%#= f.input :test_radio_button_check, as: :radio_buttons,  item_label_class: 'radio-button-check fs-12' %>
+<%# end %>
 </div>

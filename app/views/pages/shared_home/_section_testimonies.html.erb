@@ -8,7 +8,8 @@
         <% @testimonies.each do |testimony| %>
           <li class="splide__slide">
               <div class="slide-container">
-                  <%= image_tag "big-quote" %>              
+                  <%#= image_tag "big-quote" %>
+                  <%= show_svg "quote.svg" %>
                   <p class="description"><%= testimony.description.truncate(220) %></p>
                   <p class="author"><%= testimony.author %> </p>
               </div>

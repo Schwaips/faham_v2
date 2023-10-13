@@ -1,4 +1,6 @@
-input[type=text] {
+
+
+input[type=text], input[type=email], input[type=password], input[type=number], input[type=tel], select, textarea {
   background: none;
   border: none;
   border-bottom: 1px solid #bfbdbc;
@@ -11,4 +13,190 @@ input[type=text] {
   outline: none;
   padding: 1vh 0;
   width: 100%;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@mixin checkbox-default {
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  grid-template-areas: "checkbox label";
+  gap: 4px;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+}
+
+@mixin radio-icon {
+  @include input-default;
+  &:before {
+    height: 18px;
+    width: 18px;
+    margin: 4px;
+    border-radius: 50%;
+  }
+  &:after {
+    top: 0;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+@mixin input-default {
+  &:before {
+    content: "";
+    grid-area: checkbox;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    border: 2px solid;
+  }
+  &:after {
+    content: "";
+    grid-area: checkbox;
+    position: relative;
+    opacity: 0;
+  }
+  &:has(> input:checked) {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+// Button checkbox and radio button styles
+@mixin button-check-default {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: fit-content;
+  // border: 1px solid $grey-4;
+  border-radius: 4px;
+  padding: 6px 8px 6px 4px;
+  color: $black;
+  background-color: $primary;
+
+  &:before {
+    border-color: $black;
+  }
+
+  &:has(> input:checked) {
+    background-color: $primary;
+    color: $black;
+    font-weight: 600;
+
+    &:before {
+      border-color: $black;
+    }
+  }
+}
+
+.radio-button-check {
+  @include checkbox-default;
+  @include radio-icon;
+  @include button-check-default;
+  &:after {
+    background: $black;
+  }
+}
+
+
+
+
+// input[type="radio"]:checked + label {
+//   color: rgba(60, 68, 55, 1);
+//   font-weight: bold;
+// }
+
+/* Styles pour les boutons radio non sélectionnés */
+// input[type="radio"] + label {
+//   color: $black;
+//   font-weight: normal;
+// }
+
+// input[type='radio']:after { 
+//   width: 15px; 
+//   height: 15px; 
+//   border-radius: 50%;
+//   top: -2px; 
+//   left: -4px;
+//   position: relative;
+//   background-color: $primary;
+//   content: '';
+//   display: inline-block;
+//   visibility: visible;
+//   border: 1px solid $black; 
+// } 
+
+
+// input[type='radio']:checked:after { 
+//   width: 15px; 
+//   height: 15px; 
+//   border-radius: 50%; 
+//   top: -2px; 
+//   left: -4px; 
+//   position: relative; 
+//   background-color: $black; 
+//   content: ''; 
+//   display: inline-block; 
+//   visibility: visible; 
+//   border: 1px solid $black; 
+// }
+
+// Toggle for checkbox
+.toggle {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.toggle + label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  border-radius: 50rem;
+}
+
+.toggle:checked + label::before {
+  background-color: #1EDD88;
+}
+
+.toggle + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+}
+
+.toggle:checked + label::after {
+  left: 18px;
 }

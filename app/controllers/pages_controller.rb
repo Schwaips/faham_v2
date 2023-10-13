@@ -6,5 +6,6 @@ class PagesController < ApplicationController
     
     @trusted_customers = TrustedCustomer.to_be_displayed
     @testimonies = Testimony.all
+    @lead = Lead.new
   end
 end
