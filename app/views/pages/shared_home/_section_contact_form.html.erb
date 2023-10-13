@@ -30,10 +30,13 @@
       <%#= f.input :newsletter, label: " S'inscrire à la newsletter",
                   as: :boolean,
                   input_html: { class: "toggle" } %>
-      <%= f.input :terms,
+      <%#= f.input :terms,
                   label: "En soumettant ce formulaire, vous acceptez que ces informations soient utilisées pour une éventuelle relation commerciale.",
-                  as: :boolean,  input_html: { class: "toggle" } %>
+                  as: :boolean %>
+
+       <div class="flex justify-center">
         <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
+       </div>           
     <% end %>
   </div> 
 </div>
