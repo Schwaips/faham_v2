@@ -64,8 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_08_082948) do
     t.string "type"
     t.text "message"
     t.string "phone_number"
-    t.boolean "newsletter"
-    t.boolean "terms"
+    t.boolean "newsletter", default: false
+    t.boolean "terms", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

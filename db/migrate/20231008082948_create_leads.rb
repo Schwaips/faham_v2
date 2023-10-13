@@ -8,8 +8,8 @@ class CreateLeads < ActiveRecord::Migration[7.0]
       t.string :type
       t.text :message
       t.string :phone_number
-      t.boolean :newsletter
-      t.boolean :terms
+      t.boolean :newsletter, default: false
+      t.boolean :terms, default: false
 
       t.timestamps
     end
