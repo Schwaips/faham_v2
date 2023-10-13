@@ -1,0 +1,176 @@
+input[type=text], input[type=email], input[type=password], input[type=number], input[type=tel], select, textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #bfbdbc;
+  color: $grey-1;
+  flex-grow: 1;
+  font-family: Nunito,Helvetica,"sans-serif";
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  outline: none;
+  padding: 1vh 0;
+  width: 100%;
+}
+
+// style inputs on focus
+input:focus, textarea:focus {
+  border-bottom: 1px solid $teriary;
+}
+
+input:focus + label, textarea:focus + label {
+  color: $teriary;
+}
+
+label {
+  font-size: 14px;
+}
+
+// style placeholders
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@mixin checkbox-default {
+  display: grid;
+  grid-template-columns: 2em 1fr;
+  grid-template-areas: "checkbox label";
+  gap: 4px;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+}
+
+@mixin radio-icon {
+  @include input-default;
+  &:before {
+    height: 18px;
+    width: 18px;
+    margin: 4px;
+    border-radius: 50%;
+  }
+  &:after {
+    top: 0;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+@mixin input-default {
+  &:before {
+    content: "";
+    grid-area: checkbox;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    border: 2px solid;
+  }
+  &:after {
+    content: "";
+    grid-area: checkbox;
+    position: relative;
+    opacity: 0;
+  }
+  &:has(> input:checked) {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+// Button checkbox and radio button styles
+@mixin button-check-default {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: fit-content;
+  // border: 1px solid $grey-4;
+  border-radius: 4px;
+  padding: 6px 8px 6px 4px;
+  color: $black;
+  background-color: $primary;
+
+  &:before {
+    border-color: $black;
+  }
+
+  &:has(> input:checked) {
+    background-color: $primary;
+    color: $black;
+    font-weight: 600;
+
+    &:before {
+      border-color: $black;
+    }
+  }
+}
+
+.radio-button-check {
+  @include checkbox-default;
+  @include radio-icon;
+  @include button-check-default;
+  &:after {
+    background: $black;
+  }
+}
+
+// boolean in form checkbox
+.boolean-button-form {
+  position: absolute;
+  transform: scale(0);
+}
+
+.boolean-button-form + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.boolean-button-form + label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  border-radius: 50rem;
+}
+
+.boolean-button-form:checked + label::before {
+  background-color: #1EDD88;
+}
+
+.boolean-button-form + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+}
+
+.boolean-button-form:checked + label::after {
+  left: 18px;
+}
+// end boolean

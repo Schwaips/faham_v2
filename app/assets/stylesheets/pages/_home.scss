@@ -261,13 +261,79 @@
     background-color: $white;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
+    justify-content: space-between;
+    
     height: 223px;
     max-height: 223px;
     padding: 32px;
     box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.25);
     img {
       width: 40px;
+    }
+
+    .description {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 26px;
+      color: $black;
+      text-align: center;
+      margin-top: 16px;
+      @include for-phone-only {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+
+    .author {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      color: $black;
+    }
+  }
+}
+
+.section-contact-form-container {
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__picture {
+    width: 350px;
+    height: 100%;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__form_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  .two_inputs_row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 12px;
+      input {
+        width: 100%;
+      }
+  }
+
+  .category-wrapper-contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+    @include for-phone-only {
+      padding: 16px 24px;
     }
   }
 }
