@@ -15,6 +15,24 @@ input[type=text], input[type=email], input[type=password], input[type=number], i
   width: 100%;
 }
 
+input:focus, textarea:focus {
+  border-bottom: 1px solid $teriary;
+}
+
+input:focus + label, textarea:focus + label {
+  color: $teriary;
+}
+
+
+label {
+  font-size: 14px;
+}
+
+// style placeholders
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
 .input {
   width: 100%;
   display: flex;

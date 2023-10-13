@@ -1,11 +1,10 @@
 <div class="section-contact-form-container">
-
   <%= image_tag "estelle-contact.png", class:"section-contact-form-container__picture"%>
 
   <div class="section-contact-form-container__form_container">
     <h3 class="h3--terracotta">Restons en contact!</h3>
     <p class="s-paragraph">Vous avez des questions, besoin d’informations supplémentaires, ou échanger autour d’un projet ?</p>
-    <p class="s-paragraph">Contactez-moi en remplissant le formulaire ci-dessous !</p>
+    <p class="s-paragraph mb-12px">Contactez-moi en remplissant le formulaire ci-dessous !</p>
 
 
     <%= simple_form_for @lead do |f| %>
@@ -37,10 +36,4 @@
         <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
     <% end %>
   </div> 
-  </div>
-
-
-<%#= simple_form_for :components do |f| %>
-  <%#= f.input :test_radio_button_check, as: :radio_buttons,  item_label_class: 'radio-button-check fs-12' %>
-<%# end %>
 </div>
