@@ -1,7 +1,8 @@
 class LeadsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
 
   def create
-    @lead = Lead.new(lead_params)
+    @lead = authorize Lead.new(lead_params)
     if @lead.save
       flash[:notice] = "Votre demande a bien été prise en compte, merci !"
       redirect_to root_path
