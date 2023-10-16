@@ -265,14 +265,14 @@
     justify-content: space-evenly;
 
     svg {
-      width: 400px;
+      width: 50%;
       height: 779px;
     }
 
     @include for-phone-only {
       padding: 16px 24px;
       svg {
-        width: 100%;
+        width: 63%;
         height: auto;
       }
     }
