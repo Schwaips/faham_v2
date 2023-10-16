@@ -10,13 +10,17 @@
 
 puts "Destroying DB..."
 
-# TrustedCustomer.destroy_all
+
+User.destroy_all
+TrustedCustomer.destroy_all
 Testimony.destroy_all
 
 puts "Done!"
 
 puts "Seeding the database..."
 
+
+puts "creating trusted customers"
 # puts "--creating trusted customer"
 trust1 = TrustedCustomer.create!(title: "AFDI")
 file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-afdi-1.jpg')
@@ -74,8 +78,25 @@ trust4.photo.attach(io: file, filename: 'irts.png', content_type: 'image/png')
 # file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Cirad_b88jpk.png')
 # trust14.photo.attach(io: file, filename: 'cirad.png', content_type: 'image/png')
 
-# puts "Done!"
+puts "Done!"
 
+puts "Creating users"
+  User.create!(
+    email: "charlie@example.com",
+    admin: true,
+    password: "password",
+    first_name: "Charlie",
+    last_name: "Bertrand"
+  )
+
+  User.create!(
+    email: "notadmin@example.com",
+    password: "password",
+    first_name: "Not",
+    last_name: "Admin"
+  )
+
+puts "done "
 
 puts "creating fake temoignage"
 puts "---"
