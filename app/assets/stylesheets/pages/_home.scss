@@ -136,12 +136,12 @@
   }
 
   &__description-container {
-    padding: 30px 142px;
+    padding: 0px 142px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     position: relative;
 
 
@@ -185,7 +185,6 @@
   &__picture-estelle {
     width: 50%;
     height: 100%;
-    display: block;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
     @include for-phone-only {
       width: 100%;
@@ -199,8 +198,14 @@
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  padding: 64px 0;
+  padding: 64px 12px;
   background-color: $primary;
+
+  .item {
+    flex: 0 0 calc(33.33% - 10px); /* 33.33% pour 3 éléments par ligne avec un peu d'espace */
+    margin-bottom: 10px;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -267,15 +272,13 @@
     justify-content: space-evenly;
 
     svg {
-      width: 50%;
-      height: 779px;
+      width: 364px;
     }
 
     @include for-phone-only {
       padding: 16px 24px;
       svg {
-        width: 63%;
-        height: auto;
+        width: 300px;
       }
     }
   }
