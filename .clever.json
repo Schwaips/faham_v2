@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_58b6eee7-1d4a-41b6-8c83-68beb2835159",
+      "org_id": "orga_3d590021-f867-4be7-90e1-7cdc33ccae1a",
+      "deploy_url": "https://push-n3-par-clevercloud-customers.services.clever-cloud.com/app_58b6eee7-1d4a-41b6-8c83-68beb2835159.git",
+      "name": "faham",
+      "alias": "faham"
+    }
+  ]
+}

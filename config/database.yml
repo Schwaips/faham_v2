@@ -79,8 +79,12 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: faham_v2_production
+#   username: faham_v2
+#   password: <%= ENV["FAHAM_V2_DATABASE_PASSWORD"] %>
+
 production:
   <<: *default
-  database: faham_v2_production
-  username: faham_v2
-  password: <%= ENV["FAHAM_V2_DATABASE_PASSWORD"] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
