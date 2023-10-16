@@ -5,8 +5,8 @@
 
   <div class="navbar-container__link-container">
     <%= link_to "Accueil", root_path %>
-    <%= link_to "Références scientifiques", root_path %>
-    <%= link_to "Blog", root_path %>
+    <%#= link_to "Références scientifiques", root_path %>
+    <%#= link_to "Blog", root_path %>
 
     <% if user_signed_in? %>
       <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
