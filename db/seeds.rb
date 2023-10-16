@@ -30,54 +30,55 @@ trust2 = TrustedCustomer.create!(title: "UCO")
 file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/Logo_uco.png')
 trust2.photo.attach(io: file, filename: 'UCO.png', content_type: 'image/png')
 
-trust3 = TrustedCustomer.create!(title: "Université de la Réunion")
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/logo-Univ_Reunion.png')
-trust3.photo.attach(io: file, filename: 'univ-reunion.png', content_type: 'image/png')
+unless Rails.env.development?
+  trust3 = TrustedCustomer.create!(title: "Université de la Réunion")
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/logo-Univ_Reunion.png')
+  trust3.photo.attach(io: file, filename: 'univ-reunion.png', content_type: 'image/png')
 
-trust4 = TrustedCustomer.create!(title: "IRTS")
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-IRTS_lareunion.png')
-trust4.photo.attach(io: file, filename: 'irts.png', content_type: 'image/png')
+  trust4 = TrustedCustomer.create!(title: "IRTS")
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-IRTS_lareunion.png')
+  trust4.photo.attach(io: file, filename: 'irts.png', content_type: 'image/png')
 
-trust5 = TrustedCustomer.create!(title: "Region Reunion")
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-region-reunion.png')
-trust5.photo.attach(io: file, filename: 'Region-Reunion.png', content_type: 'image/png')
+  trust5 = TrustedCustomer.create!(title: "Region Reunion")
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-region-reunion.png')
+  trust5.photo.attach(io: file, filename: 'Region-Reunion.png', content_type: 'image/png')
 
-trust6 = TrustedCustomer.create!(title: "Atelier")
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-latelier-blanc.jpg')
-trust6.photo.attach(io: file, filename: 'atelier.png', content_type: 'image/png')
+  trust6 = TrustedCustomer.create!(title: "Atelier")
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-latelier-blanc.jpg')
+  trust6.photo.attach(io: file, filename: 'atelier.png', content_type: 'image/png')
 
-trust7 = TrustedCustomer.create!(title: "UCO Reunion")
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo_UCO_Reunion.png')
-trust7.photo.attach(io: file, filename: 'uco-reunion.png', content_type: 'image/png')
+  trust7 = TrustedCustomer.create!(title: "UCO Reunion")
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo_UCO_Reunion.png')
+  trust7.photo.attach(io: file, filename: 'uco-reunion.png', content_type: 'image/png')
 
-trust8 = TrustedCustomer.create!(title: "Espace dev", display: true)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-Espace-Dev.png')
-trust8.photo.attach(io: file, filename: 'espace-dev.png', content_type: 'image/png')
+  trust8 = TrustedCustomer.create!(title: "Espace dev", display: true)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-Espace-Dev.png')
+  trust8.photo.attach(io: file, filename: 'espace-dev.png', content_type: 'image/png')
 
-trust11 = TrustedCustomer.create!(title: "IRISSE", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/csm_logo_irisse.png')
-trust11.photo.attach(io: file, filename: 'irisse.png', content_type: 'image/png')
+  trust11 = TrustedCustomer.create!(title: "IRISSE", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/csm_logo_irisse.png')
+  trust11.photo.attach(io: file, filename: 'irisse.png', content_type: 'image/png')
 
-trust9 = TrustedCustomer.create!(title: "ATD Quart du monde", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-ATD-QuartMonde.png')
-trust9.photo.attach(io: file, filename: 'atd-quart-du-monde.png', content_type: 'image/png')
+  trust9 = TrustedCustomer.create!(title: "ATD Quart du monde", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-ATD-QuartMonde.png')
+  trust9.photo.attach(io: file, filename: 'atd-quart-du-monde.png', content_type: 'image/png')
 
-trust10 = TrustedCustomer.create!(title: "URD", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo_IRD.png')
-trust10.photo.attach(io: file, filename: 'URD.png', content_type: 'image/png')
+  trust10 = TrustedCustomer.create!(title: "URD", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo_IRD.png')
+  trust10.photo.attach(io: file, filename: 'URD.png', content_type: 'image/png')
 
-trust12 = TrustedCustomer.create!(title: "IRESA", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/IRESA.jpg')
-trust12.photo.attach(io: file, filename: 'iresa.jpg', content_type: 'image/jpg')
+  trust12 = TrustedCustomer.create!(title: "IRESA", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/IRESA.jpg')
+  trust12.photo.attach(io: file, filename: 'iresa.jpg', content_type: 'image/jpg')
 
-trust13 = TrustedCustomer.create!(title: "Centre hospitalier universitaire de la Réunion", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Centre_hospitalier_universitaire_de_La_Re%CC%81union.png')
-trust13.photo.attach(io: file, filename: 'chu-reunion.png', content_type: 'image/png')
+  trust13 = TrustedCustomer.create!(title: "Centre hospitalier universitaire de la Réunion", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Centre_hospitalier_universitaire_de_La_Re%CC%81union.png')
+  trust13.photo.attach(io: file, filename: 'chu-reunion.png', content_type: 'image/png')
 
-trust14 = TrustedCustomer.create!(title: "CIRAD", display: false)
-file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Cirad_b88jpk.png')
-trust14.photo.attach(io: file, filename: 'cirad.png', content_type: 'image/png')
-
+  trust14 = TrustedCustomer.create!(title: "CIRAD", display: false)
+  file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Cirad_b88jpk.png')
+  trust14.photo.attach(io: file, filename: 'cirad.png', content_type: 'image/png')
+end
 puts "Done!"
 
 puts "Creating users"
