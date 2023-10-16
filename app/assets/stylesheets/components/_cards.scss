@@ -1,0 +1,18 @@
+.linkedin-card {
+  background-color: rgba(60, 68, 55, 0.75);
+  width: 260px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 60px;
+  }
+  a {
+    color: $white;
+    padding: 12px;
+    text-decoration: underline;
+  }
+}

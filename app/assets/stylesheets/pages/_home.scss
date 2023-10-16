@@ -136,12 +136,12 @@
   }
 
   &__description-container {
-    padding: 30px 142px;
+    padding: 0px 142px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     position: relative;
 
 
@@ -185,14 +185,74 @@
   &__picture-estelle {
     width: 50%;
     height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
     @include for-phone-only {
       width: 100%;
     }
   }
 }
 
-.section-stepper-container {
+.section-chronologie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 64px 12px;
   background-color: $primary;
+
+  .item {
+    flex: 0 0 calc(33.33% - 10px); /* 33.33% pour 3 éléments par ligne avec un peu d'espace */
+    margin-bottom: 10px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+
+    &__top-card {
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 260px;
+        height: 150px;
+        span {
+          color: $white;
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__bottom-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      height: 150px;
+      &-secondary-bg {
+        background-color: $secondary;
+      }
+
+      &-quartenary-bg {
+        background-color: rgba(60, 68, 55, 0.35);
+      }
+      span {
+        color: $quarternary;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.section-stepper-container {
+  // background-color: $primary;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -212,15 +272,13 @@
     justify-content: space-evenly;
 
     svg {
-      width: 400px;
-      height: 779px;
+      width: 364px;
     }
 
     @include for-phone-only {
       padding: 16px 24px;
       svg {
-        width: 100%;
-        height: auto;
+        width: 300px;
       }
     }
   }
@@ -335,5 +393,22 @@
     @include for-phone-only {
       padding: 16px 24px;
     }
+  }
+}
+
+.section-final-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  background-color: $primary;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  svg {
+    width: 300px;
+    height: 320px;
   }
 }

@@ -18,21 +18,21 @@ puts "Done!"
 puts "Seeding the database..."
 
 # puts "--creating trusted customer"
-# trust1 = TrustedCustomer.create!(title: "AFDI")
-# file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-afdi-1.jpg')
-# trust1.photo.attach(io: file, filename: 'afdi.png', content_type: 'image/png')
+trust1 = TrustedCustomer.create!(title: "AFDI")
+file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-afdi-1.jpg')
+trust1.photo.attach(io: file, filename: 'afdi.png', content_type: 'image/png')
 
-# trust2 = TrustedCustomer.create!(title: "UCO")
-# file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/Logo_uco.png')
-# trust2.photo.attach(io: file, filename: 'UCO.png', content_type: 'image/png')
+trust2 = TrustedCustomer.create!(title: "UCO")
+file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/Logo_uco.png')
+trust2.photo.attach(io: file, filename: 'UCO.png', content_type: 'image/png')
 
-# trust3 = TrustedCustomer.create!(title: "Université de la Réunion")
-# file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/logo-Univ_Reunion.png')
-# trust3.photo.attach(io: file, filename: 'univ-reunion.png', content_type: 'image/png')
+trust3 = TrustedCustomer.create!(title: "Université de la Réunion")
+file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558149/faham/confiance/logo-Univ_Reunion.png')
+trust3.photo.attach(io: file, filename: 'univ-reunion.png', content_type: 'image/png')
 
-# trust4 = TrustedCustomer.create!(title: "IRTS")
-# file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-IRTS_lareunion.png')
-# trust4.photo.attach(io: file, filename: 'irts.png', content_type: 'image/png')
+trust4 = TrustedCustomer.create!(title: "IRTS")
+file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/Logo-IRTS_lareunion.png')
+trust4.photo.attach(io: file, filename: 'irts.png', content_type: 'image/png')
 
 # trust5 = TrustedCustomer.create!(title: "Region Reunion")
 # file = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1629558148/faham/confiance/logo-region-reunion.png')
