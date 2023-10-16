@@ -185,6 +185,8 @@
   &__picture-estelle {
     width: 50%;
     height: 100%;
+    display: block;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
     @include for-phone-only {
       width: 100%;
     }
@@ -388,5 +390,22 @@
     @include for-phone-only {
       padding: 16px 24px;
     }
+  }
+}
+
+.section-final-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  background-color: $primary;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  svg {
+    width: 300px;
+    height: 320px;
   }
 }
