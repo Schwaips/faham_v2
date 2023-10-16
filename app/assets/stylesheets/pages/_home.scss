@@ -191,8 +191,61 @@
   }
 }
 
-.section-stepper-container {
+.section-chronologie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 64px 0;
   background-color: $primary;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+
+    &__top-card {
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 260px;
+        height: 150px;
+        span {
+          color: $white;
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__bottom-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      height: 150px;
+      &-secondary-bg {
+        background-color: $secondary;
+      }
+
+      &-quartenary-bg {
+        background-color: rgba(60, 68, 55, 0.35);
+      }
+      span {
+        color: $quarternary;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.section-stepper-container {
+  // background-color: $primary;
   display: flex;
   align-items: center;
   justify-content: space-between;
