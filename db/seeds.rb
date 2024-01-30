@@ -109,4 +109,4 @@ Testimony.create(title:"Testimony from Enigma", author: "Sabine B.", description
 puts "--temoignage created"
 puts "ok"
 
-puts "Databased seeded!"
+puts "Databased seeded!"User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
