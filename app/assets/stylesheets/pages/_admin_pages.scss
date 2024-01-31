@@ -21,3 +21,67 @@
     }
   }
 }
+
+.admin-new-page {
+
+  background-color: $primary;
+  display: flex;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: space-between;
+
+  &__picture {
+    width: 350px;
+    height: 100%;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__form_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  .two_inputs_row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 12px;
+      input {
+        width: 100%;
+      }
+  }
+
+  .category-wrapper-contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+    @include for-phone-only {
+      padding: 16px 24px;
+    }
+  }
+}
+
+.section-final-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  background-color: $primary;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  svg {
+    width: 300px;
+    height: 320px;
+  }
+}
