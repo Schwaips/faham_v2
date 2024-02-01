@@ -1,6 +1,7 @@
 <div class="admin-new-page">
   <div class="section-contact-form-container__form_container">
     <h3 class="h3--terracotta">Créer un lead</h3>
+    <%= link_to "Retour", admin_index_path(), class: "btn btn--light" %>
   
     <%= simple_form_for @lead, url: admin_leads_path() do |f| %>
       <div class="two_inputs_row">

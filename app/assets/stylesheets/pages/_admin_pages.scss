@@ -1,3 +1,7 @@
+  .admin-dashboard {
+  padding: 16px 32px;
+}
+
 .admin-index-container {
   .header-container {
     padding: 16px 32px;
@@ -10,6 +14,7 @@
   .content-container {
     padding: 16px 32px;
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     flex-direction: row;
     justify-content: space-around;
@@ -27,16 +32,8 @@
   background-color: $primary;
   display: flex;
   min-height: 90vh;
-  align-items: center;
-  justify-content: space-between;
-
-  &__picture {
-    width: 350px;
-    height: 100%;
-    @include for-phone-only {
-      display: none;
-    }
-  }
+  align-items: start;
+  justify-content: start;
 
   &__form_container {
     flex-grow: 1;
