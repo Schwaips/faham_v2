@@ -1,0 +1,123 @@
+  .admin-dashboard {
+  padding: 16px 32px;
+}
+
+.admin-index-container {
+  .header-container {
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    .header-title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+  .content-container {
+    padding: 16px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+
+    /* CSS */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      // border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    thead {
+      background-color: #333; /* Couleur de fond pour l'en-tête */
+      color: white; /* Couleur du texte pour l'en-tête */
+      border-radius: 10px;
+    }
+
+    thead th {
+      padding: 10px;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2; /* Couleur de fond pour les lignes paires */
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #ffffff; /* Couleur de fond pour les lignes impaires */
+    }
+
+    tbody td {
+      padding: 10px;
+      text-align: center;
+    }
+
+  
+    .table-container  {
+      flex-grow: 1;
+    }
+    .filter-container {
+      min-width: 300px;
+    }
+  }
+}
+
+
+// new or edit page
+.admin-new-page-container {
+  padding: 16px 32px;
+  min-height: 90vh;
+
+  &__form_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  .two_inputs_row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 12px;
+      input {
+        width: 100%;
+      }
+  }
+
+  .category-wrapper-contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+    @include for-phone-only {
+      padding: 16px 24px;
+    }
+  }
+}
+
+.section-final-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  background-color: $primary;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  svg {
+    width: 300px;
+    height: 320px;
+  }
+}
+
+.admin-show-page-container {
+  padding: 16px 32px;
+}
+
+
+

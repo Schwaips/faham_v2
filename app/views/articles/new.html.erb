@@ -1,7 +1,7 @@
  
- <div class="section-contact-form-container__form_container">
+<div class="admin-new-page-container">
 
-<%= simple_form_for(@article) do |f| %>
+  <%= simple_form_for(@article) do |f| %>
     <% if @article.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -18,7 +18,7 @@
       <%= f.input :title, label: "Titre" %>
     </div>
 
-     <div class="two_inputs_row">
+    <div class="two_inputs_row">
         <%= f.input :author, label: "Auteur" %>
         <%= f.input :publication_date, type: :date, html5: true  %>
     </div>

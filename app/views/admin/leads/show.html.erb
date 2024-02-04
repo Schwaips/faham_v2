@@ -1,0 +1,21 @@
+<!-- FILEPATH: /Users/charliebertrand/code/Schwaips/projects/faham_v2/app/views/admin/articles/show.html.erb -->
+
+
+<div class="admin-show-page-container">
+
+
+<h1>Lead Details</h1>
+<%= link_to 'Edit', edit_admin_lead_path(@lead) %> |
+<%= link_to 'Retour', admin_leads_path %>
+
+<p><strong>Name:</strong> <%= @lead.first_name %></p>
+<p><strong>Email:</strong> <%= @lead.last_name %></p>
+<p><strong>Phone:</strong> <%= @lead.phone_number %></p>
+<p><strong>Société :</strong> <%= @lead.company %></p>
+<p><strong>Type :</strong> <%= @lead.customer_type %></p>
+<p><strong>Message :</strong> <%= @lead.message %></p>
+<p><strong>Accepte la newsletter ? :</strong> <%= @lead.newsletter ? "Oui" : "Non" %></p>
+<p><strong>Accepte les termes :</strong> <%= @lead.terms ? "Oui" : "Non"  %></p>
+
+</div>
+<!-- Add more lead details here as needed -->

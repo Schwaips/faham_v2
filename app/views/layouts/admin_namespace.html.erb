@@ -14,10 +14,9 @@
   <body>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" unless remove_navbar?(request.fullpath) %>
-    <div class="main-container">
+    <div class="main-container-admin">
+      <%= render "shared/admin_navbar" %>
       <%= yield %>
     </div>
-
-    <%= render "shared/footer" %>
   </body>
 </html>

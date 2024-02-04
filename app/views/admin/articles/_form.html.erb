@@ -1,0 +1,46 @@
+<div class="admin-new-page-container">
+  <% if @article.new_record? %>
+    <h1>Ajouter un article</h1>
+  <% else %>
+    <h1>Modifier un article</h1>
+  <% end %>
+
+  <%= link_to admin_articles_path, class: "mb-16px" do %>
+    <i class="fas fa-arrow-left"></i> Retour
+  <% end %>
+
+
+<div class="admin-new-page-container__form_container">
+    <%= simple_form_for [:admin, @article] do |f| %>
+      <% if @article.errors.any? %>
+        <div id="error_explanation">
+          <p><%= pluralize(@article.errors.count, "erreur") %>  Merci de vérifier les champs </p>
+
+          <ul>
+            <% @article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-inputs">
+        <%= f.input :title, label: "Titre" %>
+      </div>
+
+      <div class="two_inputs_row">
+          <%= f.input :author, label: "Auteur" %>
+          <%= f.input :publication_date, type: :date, html5: true  %>
+      </div>
+      <div class="form-inputs mt-12px">
+        <%= f.rich_text_area :content %>
+      </div>
+
+      <%= f.input :photos, as: :file, label: "Miniature de l'offre", input_html: { multiple: true } %>
+
+      <div class="flex justify-center mt-16px"></div>
+        <%= f.submit "Enregistrer", class: 'btn btn--dark mb-5' %>
+      </div>           
+    <% end %> 
+  </div>
+</div>

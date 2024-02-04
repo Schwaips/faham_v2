@@ -1,0 +1,74 @@
+<div class="admin-index-container">
+  <div class="header-container">
+    <h1 class="header-title">Leads</h1>
+
+  <div class="flex align-center space-between  w-100percent">
+    <%= link_to new_admin_lead_path(), class: "btn btn--icon" do %>
+      <i class="fas fa-plus"></i> <!-- Plus icon -->
+      Enregistrer un nouveau lead
+    <% end %>
+    <%= link_to admin_index_path() do %>
+      <i class="fas fa-arrow-left"></i> <!-- Back arrow icon -->
+      Retour
+    <% end %>
+  </div>
+
+
+    <div class="search-container">
+      <%= form_tag(admin_leads_path, method: :get, class: "search-form") do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher un lead", class: "search-input") %>
+        <div class="flex">
+          <%= submit_tag("Rechercher", class: "btn btn--dark") %>
+          <% if params[:search].present? %>
+            <%= link_to admin_leads_path, class: "btn btn--icon", method: :get do %>
+              <i class="fas fa-sync-alt"></i>
+              Réinitialiser
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="content-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Société</th>
+            <th></th> 
+            <th></th> 
+          </tr>
+        </thead>
+        <tbody>
+          <% @leads.each do |lead| %>
+            <tr>
+              <td><%= lead.id %></td>
+              <td><%= lead.first_name %></td>
+              <td><%= lead.last_name %></td>
+              <td><%= lead.email %></td>
+              <td><%= lead.phone_number %></td>
+              <td><%= lead.company %></td>
+              <td>
+                <%= link_to admin_lead_path(lead), class: "btn btn--icon" do %>
+                  <i class="fas fa-eye"></i> <!-- Show button with eye icon -->
+                <% end %>
+                <%= link_to edit_admin_lead_path(lead), class: "btn btn--icon" do %>
+                  <i class="fas fa-pencil-alt"></i> <!-- Edit button with pencil icon -->
+                <% end %>
+            </td>
+            <td>
+              <%= link_to admin_lead_path(lead), method: :delete, data: { turbo_method: :delete } do %>
+                <i class="fas fa-trash"></i> <!-- Delete button with trash icon -->
+              <% end %>
+            </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>

@@ -4,9 +4,17 @@
   // width: calc(100% - 32px);
   // max-width: 1280px;
   // margin: auto;
+  min-height: 100vh;
   padding-top: 1px;
 }
 
 .container-spaced {
   padding: 0 32px;
+}
+
+.main-container-admin {
+  background-color: $secondary;
+  min-height: calc(100vh - (64px));
+  margin-left: 100px;
+  
 }

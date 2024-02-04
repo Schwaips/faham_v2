@@ -1,0 +1,12 @@
+
+<div class="admin-dashboard">
+  <h1 class="admin-dashboard__title">Dashboard</h1>
+   <p>Bonjour, <%= current_user.first_name %></p>
+
+   <div class="flex-col">
+    <%= link_to "Accéder aux Leads", admin_leads_path()  %>
+    <%= link_to "Accéder aux Articles", admin_articles_path() %>
+    <%= link_to "Accéder aux Logo clients", admin_trusted_customers_path() %>
+    <%= link_to "Accéder aux Témoignages clients", admin_testimonies_path() %>
+   </div>
+</div>  
