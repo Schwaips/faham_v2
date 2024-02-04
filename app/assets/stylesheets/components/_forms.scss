@@ -1,4 +1,4 @@
-input[type=text], input[type=email], input[type=password], input[type=number], input[type=tel], select, textarea {
+input[type=text], input[type=email], input[type=date], input[type=password], input[type=number], input[type=tel], select, textarea {
   background: none;
   border: none;
   border-bottom: 1px solid #bfbdbc;
@@ -27,7 +27,7 @@ label {
 }
 
 // style placeholders
-input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder, input[type=date]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-size: 14px;
 }
 
@@ -174,3 +174,13 @@ input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-pl
   left: 18px;
 }
 // end boolean
+
+
+#article_content {
+  min-height: 400px;
+  border: 1px solid #bfbdbc;
+  border-radius: 10px;
+  margin: 12px 0px;
+}
+
+// 

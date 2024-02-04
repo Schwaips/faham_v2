@@ -14,6 +14,7 @@ puts "Destroying DB..."
 User.destroy_all
 TrustedCustomer.destroy_all
 Testimony.destroy_all
+Article.destroy_all
 
 puts "Done!"
 
@@ -108,5 +109,20 @@ puts "--temoignage created"
 Testimony.create(title:"Testimony from Enigma", author: "Sabine B.", description:"Un travail de fond avec Estelle m'a permis de découvrir une méthode de travail efficace et axé sur la découverte des autres et de soi, merci!!", company: "AFDI")
 puts "--temoignage created"
 puts "ok"
+
+
+puts "creating articles"
+article1 = Article.create!(title: "Chants", content: "Je suis prêt à entrainer vos belles voix pour vos plus beaux concerts", category: "Art", author: "Estelle Laboureur")
+file = URI.open('https://p5.storage.canalblog.com/57/71/1380236/106139385.jpg')
+article1.photos.attach(io: file, filename: 'sing.jpg', content_type: 'image/jpg')
+
+article2 = Article.create!(title: "Coucou", content: "Je suis prêt à entrainer vos belles voix pour vos plus beaux concerts", category: "Art", author: "Estelle Laboureur")
+file = URI.open('https://p5.storage.canalblog.com/57/71/1380236/106139385.jpg')
+article2.photos.attach(io: file, filename: 'sing.jpg', content_type: 'image/jpg')
+
+article3 = Article.create!(title: "Les chats sont-ils maléfiques?", intro_text: "Chat noir ou chat gris, on décrypte tout.", content: "Chat noir ou chat gris, on décrypte tout.", category: "Chat", author: "Estelle Laboureur", highlight: true)
+file = URI.open('https://res.cloudinary.com/faham/image/upload/v1631790189/samples/food/dessert.jpg')
+article3.photos.attach(io: file, filename: 'sardaigne.jpg', content_type: 'image/jpg')
+
 
 puts "Databased seeded!"

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :leads, only: [:create]
 
   resources :admin, only: [:index], controller: "admin/dashboard"
+  resources :articles, only: [:index, :show, :new, :create]
+
+  
   namespace :admin do 
     resources :leads, only: [:index, :new, :create, :show, :destroy]
     resources :testimonies, only: [:index, :show, :destroy, :edit, :update]
