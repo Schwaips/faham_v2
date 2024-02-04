@@ -1,4 +1,4 @@
-class BasePolicy < ApplicationPolicy
+class Admin::BasePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
