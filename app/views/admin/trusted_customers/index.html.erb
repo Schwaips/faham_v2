@@ -1,11 +1,11 @@
 <div class="admin-index-container">
   <div class="header-container">
-    <h1 class="header-title">Articles</h1>
+    <h1 class="header-title">Logo client confiance</h1>
     
     <div class="flex align-center space-between  w-100percent">
-      <%= link_to new_admin_article_path(), class: "btn btn--icon" do %>
+      <%= link_to new_admin_trusted_customer_path(), class: "btn btn--icon" do %>
         <i class="fas fa-plus"></i> <!-- Plus icon -->
-        Rédiger un nouvel article
+        Nouveau
       <% end %>
       <%= link_to admin_index_path() do %>
         <i class="fas fa-arrow-left"></i> <!-- Back arrow icon -->
@@ -14,12 +14,12 @@
     </div>
 
     <div class="search-container">
-      <%= form_tag(admin_articles_path, method: :get, class: "search-form") do %>
-        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher un article par son titre", class: "search-input") %>
+      <%= form_tag(admin_trusted_customers_path, method: :get, class: "search-form") do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher par titre", class: "search-input") %>
         <div class="flex">
           <%= submit_tag("Rechercher", class: "btn btn--dark") %>
           <% if params[:search].present? %>
-            <%= link_to admin_articles_path, class: "btn btn--icon", method: :get do %>
+            <%= link_to admin_trusted_customers_path, class: "btn btn--icon", method: :get do %>
               <i class="fas fa-sync-alt"></i>
               Réinitialiser
             <% end %>
@@ -34,28 +34,26 @@
       <thead>
         <tr>
           <th>Titre</th>
-          <th>Auteur</th>
-          <th>Date de publication</th>
-          <th></th> <!-- Added column for actions -->
-          <th></th> <!-- Added column for actions -->
+          <th>Date de création</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @articles.each do |article| %>
+        <% @trusted_customers.each do |trusted_customer| %>
           <tr>
-            <td><%= article.title %></td>
-            <td><%= article.author %></td>
-            <td><%= article.publication_date&.strftime("%d/%m/%Y") %></td>
+            <td><%= trusted_customer.title %></td>
+            <td><%= trusted_customer.created_at.strftime("%d/%m/%Y - %H:%M") %></td>
             <td>
-              <%= link_to admin_article_path(article), class: "btn btn--icon" do %>
+              <%= link_to admin_trusted_customer_path(trusted_customer), class: "btn btn--icon" do %>
                 <i class="fas fa-eye"></i> <!-- Show button with eye icon -->
               <% end %>
-              <%= link_to edit_admin_article_path(article), class: "btn btn--icon" do %>
+              <%= link_to edit_admin_trusted_customer_path(trusted_customer), class: "btn btn--icon" do %>
                 <i class="fas fa-pencil-alt"></i> <!-- Edit button with pencil icon -->
               <% end %>
             </td>
             <td>             
-              <%= link_to admin_article_path(article), method: :delete, data: { turbo_method: :delete } do %>
+              <%= link_to admin_trusted_customer_path(trusted_customer), method: :delete, data: { turbo_method: :delete } do %>
                 <i class="fas fa-trash"></i> <!-- Delete button with trash icon -->
               <% end %>
             </td>

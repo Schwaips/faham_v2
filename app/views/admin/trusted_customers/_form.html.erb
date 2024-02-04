@@ -1,0 +1,45 @@
+<div class="admin-new-page-container">
+  <% if @trusted_customer.new_record? %>
+    <h1>Ajouter un logo</h1>
+  <% else %>
+    <h1>Modifier un logo</h1>
+  <% end %>
+
+  <%= link_to admin_trusted_customers_path, class: "mb-16px" do %>
+    <i class="fas fa-arrow-left"></i> Retour
+  <% end %>
+
+
+<div class="admin-new-page-container__form_container">
+    <%= simple_form_for [:admin, @trusted_customer] do |f| %>
+      <% if @trusted_customer.errors.any? %>
+        <div id="error_explanation">
+          <p><%= pluralize(@trusted_customer.errors.count, "erreur") %>  Merci de vérifier les champs </p>
+
+          <ul>
+            <% @trusted_customer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-inputs">
+        <%= f.input :title, label: "Titre" %>
+      </div>
+
+      <%= f.input :photo, as: :file, label: "Image" %>
+
+      <% if @trusted_customer.photo.attached? %>
+        <p>Image actuel : </p>
+        <div class="admin-single-photo-miniature mt-12px">
+          <%= image_tag @trusted_customer.photo %>
+        </div>
+      <% end %>
+
+      <div class="flex justify-center mt-16px"></div>
+        <%= f.submit "Enregistrer", class: 'btn btn--dark mb-5' %>
+      </div>           
+    <% end %> 
+  </div>
+</div>
