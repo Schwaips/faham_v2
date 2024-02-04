@@ -13,7 +13,7 @@ class Admin::TestimoniesController < Admin::DashboardController
   end
 
   def new
-
+    @testimony = Testimony.new
   end
 
   def create
