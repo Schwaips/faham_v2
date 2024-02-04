@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     resources :leads, only: [:index, :new, :create, :edit, :update, :show, :destroy]
     resources :articles, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    # resources :testimonies, only: [:index, :show, :destroy, :edit, :update]
+    resources :testimonies, only: [:index, :show, :new, :create, :destroy, :edit, :update]
     resources :trusted_customers, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end 
 end

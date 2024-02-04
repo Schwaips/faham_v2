@@ -1,0 +1,11 @@
+
+<div class="admin-show-page-container">
+
+  <h1><%= @testimony.title %></h1>
+  <%= link_to 'Edit', edit_admin_testimony_path(@testimony) %> |
+  <%= link_to 'Retour', admin_testimonies_path %>
+  <p><strong>Auteur:</strong> <%= @testimony.author %></p>
+  <p><strong>Description :</strong> <%= @testimony.description %></p>
+  <p><strong>Société:</strong> <%= @testimony.company %></p>
+
+</div>

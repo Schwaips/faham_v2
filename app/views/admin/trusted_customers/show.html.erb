@@ -1,8 +1,11 @@
 <div class="admin-show-page-container">
   <h1><%= @trusted_customer.title %></h1>
   <%= link_to 'Edit', edit_admin_trusted_customer_path(@trusted_customer) %> |
-<%= link_to 'Retour', admin_trusted_customers_path %>
- 
+  <%= link_to 'Retour', admin_trusted_customers_path %>
+  
+
+  <p><strong>Titre:</strong> <%= @trusted_customer.title %></p>
+  <p><strong>Afficher dans la homepage?:</strong> <%= @trusted_customer.display ? "Oui" : "Non" %></p>
   <% if @trusted_customer.photo.attached? %>
     <div class="photos">
       <%= image_tag @trusted_customer.photo %>

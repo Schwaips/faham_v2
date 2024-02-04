@@ -2,6 +2,8 @@
     <h3 class="text-center">Ils m'ont fait confiance</h3>
     <div class="section-trusted-me-container__customer-container">
     <% @trusted_customers.each do |customer| %>
+      <% next unless customer.photo.attached? %>
+
       <img src="<%= customer.photo.blob.url %>">
     <%  end %>
     </div>

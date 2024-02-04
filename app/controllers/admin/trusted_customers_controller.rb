@@ -49,6 +49,6 @@ class Admin::TrustedCustomersController < Admin::DashboardController
 
 
   def trusted_customer_params
-    params.require(:trusted_customer).permit(:title, :photo)
+    params.require(:trusted_customer).permit(:title, :photo, :display)
   end
 end

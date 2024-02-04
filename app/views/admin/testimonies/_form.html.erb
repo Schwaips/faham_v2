@@ -1,0 +1,40 @@
+<div class="admin-new-page-container">
+    <% if @testimony.persisted? %>
+      <h1>Modifier le témoignage</h1>
+    <% else %>
+      <h1>Ajouter un témoignage</h1>
+    <% end %>
+
+  <%= link_to admin_testimonies_path, class: "mb-16px" do %>
+    <i class="fas fa-arrow-left"></i> Retour
+  <% end %>
+
+<div class="admin-new-page-container__form_container">
+    <%= simple_form_for [:admin, @testimony] do |f| %>
+      <% if @testimony.errors.any? %>
+        <div id="error_explanation">
+          <p class="red-error"><%= pluralize(@testimony.errors.count, "erreur") %>. Merci de vérifier les champs </p>
+
+          <ul>
+            <% @testimony.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="two_inputs_row">
+        <%= f.input :title, label: "Titre" %>
+      </div>
+        <%= f.input :description, label: "Description" %>
+      <div class="two_inputs_row">
+        <%= f.input :author, label: "Auteur" %>
+        <%= f.input :company, label: "Société" %>
+      </div>
+
+      <div class="flex justify-center mt-16px">
+        <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
+      </div>           
+    <% end %> 
+  </div>
+</div>
