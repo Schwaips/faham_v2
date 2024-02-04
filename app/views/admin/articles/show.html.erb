@@ -1,0 +1,20 @@
+<div class="admin-show-page-container">
+  <h1><%= @article.title %></h1>
+  <%= link_to 'Edit', edit_admin_article_path(@article) %> |
+<%= link_to 'Retour', admin_articles_path %>
+  <p><strong>Auteur:</strong> <%= @article.author %></p>
+  <p><strong>Date de publication:</strong> <%= @article.publication_date %></p>
+  <p class="article-content"><strong>Contenu:</strong>
+    <%= @article.content %>
+  </p>
+  <p><strong>Lien:</strong> <%= @article.link %></p>
+  <p><strong>Texte d'introduction:</strong> <%= @article.intro_text %></p>
+
+  <% if @article.photos.attached? %>
+    <div class="photos">
+      <% @article.photos.each do |photo| %>
+        <%= image_tag photo %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

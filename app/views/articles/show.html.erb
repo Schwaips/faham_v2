@@ -1,8 +1,19 @@
-<!-- FILEPATH: /Users/charliebertrand/code/Schwaips/projects/faham_v2/app/views/articles/show.html.erb -->
 
-<h1><%= @article.title %></h1>
-<p><strong>Auteur:</strong> <%= @article.author %></p>
-<p><strong>Date de publication:</strong> <%= @article.publication_date %></p>
-<p><strong>Catégorie:</strong> <%= @article.content %></p>
-<p><strong>Lien:</strong> <%= @article.link %></p>
-<p><strong>Texte d'introduction:</strong> <%= @article.intro_text %></p>
+<div class="admin-show-page-container">
+
+  <h1><%= @article.title %></h1>
+  <p><strong>Auteur:</strong> <%= @article.author %></p>
+  <p><strong>Date de publication:</strong> <%= @article.publication_date %></p>
+  <p><strong>Catégorie:</strong> <%= @article.content %></p>
+  <p><strong>Lien:</strong> <%= @article.link %></p>
+  <p><strong>Texte d'introduction:</strong> <%= @article.intro_text %></p>
+
+
+  <% if @article.photos.attached? %>
+    <div class="photos">
+      <% @article.photos.each do |photo| %>
+        <%= image_tag photo %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

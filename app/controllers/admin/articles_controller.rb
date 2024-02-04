@@ -8,6 +8,10 @@ class Admin::ArticlesController < Admin::DashboardController
     end
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new
     @article = Article.new
   end
@@ -35,6 +39,13 @@ class Admin::ArticlesController < Admin::DashboardController
       render :edit, alert: "Veuillez vérifier les erreurs ci-dessous.", status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to admin_articles_path, notice: "Article supprimé avec succès."
+  end 
 
   private 
 

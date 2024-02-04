@@ -1,5 +1,9 @@
 <div class="admin-new-page-container">
-  <h1>Ajouter un article</h1>
+  <% if @article.new_record? %>
+    <h1>Ajouter un article</h1>
+  <% else %>
+    <h1>Modifier un article</h1>
+  <% end %>
 
   <%= link_to admin_articles_path, class: "mb-16px" do %>
     <i class="fas fa-arrow-left"></i> Retour

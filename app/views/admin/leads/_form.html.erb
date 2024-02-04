@@ -1,5 +1,9 @@
 <div class="admin-new-page-container">
-    <h1>Ajouter un lead</h1>
+    <% if @lead.persisted? %>
+      <h1>Modifier un lead</h1>
+    <% else %>
+      <h1>Ajouter un lead</h1>
+    <% end %>
 
   <%= link_to admin_leads_path, class: "mb-16px" do %>
     <i class="fas fa-arrow-left"></i> Retour
@@ -40,6 +44,7 @@
                   item_label_class: 'radio-button-check'
                   %>
 
+      <%= f.input :newsletter %>
       <div class="flex justify-center mt-16px">
         <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
       </div>           
