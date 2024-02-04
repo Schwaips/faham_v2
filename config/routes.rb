@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "mentions_legales", to: "pages#mentions_legales"
 
   resources :leads, only: [:create]
+  resources :articles, only: [:index, :show, :new, :create]
 end

@@ -1,5 +1,6 @@
 .main-container {
   background-color: $secondary;
+  min-height: calc(100vh - (46px + 64px));
   // width: calc(100% - 32px);
   // max-width: 1280px;
   // margin: auto;
