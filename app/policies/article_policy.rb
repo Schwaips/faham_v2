@@ -10,4 +10,16 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
+  def new?
+    user&.admin?
+  end
+
+  def create?
+    new?
+  end
+
 end

@@ -2,12 +2,16 @@
 
 <h1>Liste des articles</h1>
 
+<% if current_user&.admin? %>
+  <%= link_to 'Nouvel article', new_article_path %>
+<% end %>
 <table>
   <thead>
     <tr>
       <th>Titre</th>
       <th>Intro Text</th>
       <th>Content</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +20,7 @@
         <td><%= article.title %></td>
         <td><%= article.intro_text %></td>
         <td><%= article.content %></td>
+        <td><%= link_to 'Voir', article_path(article) %></td>
       </tr>
     <% end %>
   </tbody>
