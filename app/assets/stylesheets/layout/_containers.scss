@@ -14,6 +14,7 @@
 
 .main-container-admin {
   background-color: $secondary;
-  min-height: 100vh;
+  min-height: calc(100vh - (64px));
+  margin-left: 100px;
   
 }

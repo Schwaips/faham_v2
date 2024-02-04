@@ -1,7 +1,4 @@
 class Admin::LeadsController < Admin::DashboardController
-  before_action :authenticate_user!
-  before_action :require_admin
-
   def index
     @leads = Lead.all
   end
@@ -20,13 +17,7 @@ class Admin::LeadsController < Admin::DashboardController
     end
   end
 
-  private 
-
-  def require_admin
-    unless current_user.admin?
-      redirect_to root_path, alert: "Vous n'êtes pas autorisé à accéder à cette page."
-    end
-  end
+  private
 
   def lead_params
     params.require(:lead).permit(:first_name, :last_name, :email, :phone_number, :message)
