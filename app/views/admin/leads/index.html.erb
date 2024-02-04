@@ -1,12 +1,36 @@
 <div class="admin-index-container">
   <div class="header-container">
     <h1 class="header-title">Leads</h1>
-    <%= link_to "New Lead", new_admin_lead_path(), class: "btn btn--dark mb-5" %>
-    <%= link_to "Retour", admin_index_path(), class: "btn btn--light" %>
+
+  <div class="flex align-center space-between  w-100percent">
+    <%= link_to new_admin_lead_path(), class: "btn btn--icon" do %>
+      <i class="fas fa-plus"></i> <!-- Plus icon -->
+      Enregistrer un nouveau lead
+    <% end %>
+    <%= link_to admin_index_path() do %>
+      <i class="fas fa-arrow-left"></i> <!-- Back arrow icon -->
+      Retour
+    <% end %>
+  </div>
+
+
+    <div class="search-container">
+      <%= form_tag(admin_leads_path, method: :get, class: "search-form") do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher un lead", class: "search-input") %>
+        <div class="flex">
+          <%= submit_tag("Rechercher", class: "btn btn--dark") %>
+          <% if params[:search].present? %>
+            <%= link_to admin_leads_path, class: "btn btn--icon", method: :get do %>
+              <i class="fas fa-sync-alt"></i>
+              Réinitialiser
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="content-container">
-    <div class="table-container">
       <table>
         <thead>
           <tr>
@@ -29,9 +53,5 @@
           <% end %>
         </tbody>
       </table>
-    </div>
-    <div class="filter-container">
-      <h3>hello</h3>
-    </div>
   </div>
 </div>

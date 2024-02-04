@@ -1,0 +1,48 @@
+<div class="admin-new-page-container">
+    <h1>Ajouter un lead</h1>
+
+  <%= link_to admin_leads_path, class: "mb-16px" do %>
+    <i class="fas fa-arrow-left"></i> Retour
+  <% end %>
+
+<div class="admin-new-page-container__form_container">
+    <%= simple_form_for [:admin, @lead] do |f| %>
+      <% if @lead.errors.any? %>
+        <div id="error_explanation">
+          <p class="red-error"><%= pluralize(@lead.errors.count, "erreur") %>. Merci de vérifier les champs </p>
+
+          <ul>
+            <% @lead.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="two_inputs_row">
+        <%= f.input :first_name, label: "Prénom", placeholder: "Alan" %>
+        <%= f.input :last_name, label: "Nom", placeholder: "Turing" %>
+      </div>
+      <div class="two_inputs_row">
+        <%= f.input :email, label: "Email", placeholder: "alan.turing@enigma.com" %>
+        <%= f.input :phone_number, label: "Téléphone", placeholder: "+33 1 23 45 67 89" %>
+      </div>
+
+      <%= f.input :company, label: "Société", placeholder: "Société Enigma" %>
+      <%= f.input :message, as: :text, placeholder: "Détaillez au mieux votre besoin." %>
+      <%= f.input :customer_type, label: "Vous êtes...",
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper-contact-form',
+                  item_wrapper_class: 'category-item',
+                  input_html: { class: 'category-selector' },
+                  collection: Lead::TYPES,
+                  item_label_class: 'radio-button-check'
+                  %>
+
+      <div class="flex justify-center mt-16px">
+        <%= f.submit "Envoyer", class: 'btn btn--dark mb-5' %>
+      </div>           
+    <% end %> 
+  </div>
+</div>

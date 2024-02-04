@@ -1,27 +1,8 @@
-<!-- FILEPATH: /Users/charliebertrand/code/Schwaips/projects/faham_v2/app/views/articles/index.html.erb -->
 
-<h1>Liste des articles</h1>
+<div class="flex flex-col align-center justify-center">  
 
-<% if current_user&.admin? %>
-  <%= link_to 'Nouvel article', new_article_path %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Intro Text</th>
-      <th>Content</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.intro_text %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Voir', article_path(article) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<h1>Cette section est en cours de construction</h1>
+<%= link_to "Retour à l'accueil", root_path %>
+
+</div>

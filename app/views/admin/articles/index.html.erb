@@ -3,11 +3,10 @@
     <h1 class="header-title">Articles</h1>
     
     <div class="flex align-center space-between  w-100percent">
-      <%= link_to new_admin_lead_path(), class: "btn btn--icon" do %>
+      <%= link_to new_admin_article_path(), class: "btn btn--icon" do %>
         <i class="fas fa-plus"></i> <!-- Plus icon -->
         Rédiger un nouvel article
       <% end %>
-      
       <%= link_to admin_index_path() do %>
         <i class="fas fa-arrow-left"></i> <!-- Back arrow icon -->
         Retour
@@ -16,7 +15,7 @@
 
     <div class="search-container">
       <%= form_tag(admin_articles_path, method: :get, class: "search-form") do %>
-        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher un article", class: "search-input") %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Rechercher un article par son titre", class: "search-input") %>
         <div class="flex">
           <%= submit_tag("Rechercher", class: "btn btn--dark") %>
           <% if params[:search].present? %>

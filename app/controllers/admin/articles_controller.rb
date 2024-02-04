@@ -14,11 +14,25 @@ class Admin::ArticlesController < Admin::DashboardController
 
   def create
     @article = Article.new(article_params)
-    authorize @article, policy: :admin_base_policy
+
     if @article.save
       redirect_to admin_articles_path, notice: "Article créé avec succès."
     else
-      render :new
+      render :new, alert: "Veuillez vérifier les erreurs ci-dessous.", status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to admin_articles_path, notice: "Article modifié avec succès."
+    else
+      render :edit, alert: "Veuillez vérifier les erreurs ci-dessous.", status: :unprocessable_entity
     end
   end
 

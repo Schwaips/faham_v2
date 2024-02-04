@@ -2,5 +2,9 @@
 <div class="admin-dashboard">
   <h1 class="admin-dashboard__title">Dashboard</h1>
    <p>Bonjour, <%= current_user.first_name %></p>
-  <%= link_to "Accéder aux Leads", admin_leads_path()  %>
+
+   <div class="flex-col">
+    <%= link_to "Accéder aux Leads", admin_leads_path()  %>
+    <%= link_to "Accéder aux Articles", admin_articles_path() %>
+   </div>
 </div>  

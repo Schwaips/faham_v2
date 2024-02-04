@@ -61,12 +61,9 @@
   }
 }
 
-.admin-new-page {
-  background-color: $primary;
-  display: flex;
+.admin-new-page-container {
+  padding: 16px 32px;
   min-height: 90vh;
-  align-items: start;
-  justify-content: start;
 
   &__form_container {
     flex-grow: 1;
