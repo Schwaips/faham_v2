@@ -10,18 +10,23 @@
 
 
 <div class="articles-container">
+  <% @articles.each do |article| %>
+    <%= link_to "#", class: "link-article-card" do %>
+      <div class="blog-card">
+        <p class="blog-card__publication-date">
+          <%= article.publication_date ? article.publication_date&.strftime("%d %B %Y") : " - " %>
+        </p>
+        <div class="blog-card__image">
+          <%= image_tag 'banner-blog.avif' %>
+        </div>
+          
+        <span class="blog-card__title"><%= article.title&.truncate(40) %></span>
+        <span class="blog-card__intro-text"><%= article.intro_text&.truncate(80) %></span>
 
-<% @articles.each do |article| %>
-
-  <div class="blog-card">
-    <%= article.publication_date %>
-    <%#= image_tag article.image, class:"blog-card__image" %>
-    <%= article.title %>
-    <%= article.intro_text %>
-    <%#= article.content %>
-  </div>
-
-<% end %>
-
-
+        <p class="blog-card__button-read">
+          Lire la suite
+        </p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
