@@ -1,3 +1,8 @@
+<% content_for :meta_title, "Faham - #{@article&.title}" %>
+<% content_for :meta_description, "#{@article&.intro_text}" %>
+<% content_for :meta_image, @article.photos.attached? ? @article.photos.first.blob.url : asset_path("banner-blog.avif") %>
+
+
 <div class="banner-article-show">
   <div class="banner-article-show__image">
     <% if @article.photos.attached? %>
