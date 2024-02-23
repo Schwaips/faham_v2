@@ -56,6 +56,6 @@ class Admin::ArticlesController < Admin::DashboardController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :intro_text, :publication_date, :category, :author, photos: [])
+    params.require(:article).permit(:title, :content, :intro_text, :category, :publication_date, :category, :author, photos: [])
   end
 end

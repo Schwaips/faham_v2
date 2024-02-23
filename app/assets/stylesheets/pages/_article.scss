@@ -22,9 +22,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      // @include for-tablet-portrait-up {
-      //   height: 500px;
-      // }
     }
   }
   &__description {
@@ -45,4 +42,25 @@
       font-size: 12px;
     }
   }
+}
+
+.article-show-content {
+  background-color: $primary;
+  padding: 12px;
+  margin-top: 12px;
+  min-height: 500px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 80vw;
+    // centrer le contenu de l'article en le justifiant
+    
+  }
+}
+
+.more-articles-container {
+  min-height: 12px;
 }
