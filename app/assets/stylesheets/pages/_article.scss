@@ -46,7 +46,10 @@
 
 .article-show-content {
   background-color: $primary;
-  padding: 12px;
+  padding: 12px 64px;
+  @include for-phone-only {
+    padding: 12px;
+  }
   margin-top: 12px;
   min-height: 500px;
 
