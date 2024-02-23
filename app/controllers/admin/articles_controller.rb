@@ -33,23 +33,6 @@ class Admin::ArticlesController < Admin::DashboardController
   def update
     @article = Article.find(params[:id])
 
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    
-    puts "params[:article][:photos] #{params[:article][:photos].nil?}"
-    puts "params[:article][:photos] #{params[:article][:photos]}"
-    puts "params[:article][:photos] #{params[:article][:photos] === [""]}"
-    
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
-    puts "###############"
     if params[:article][:photos] == [""] || params[:article][:photos].nil?
       update_params = article_params.except(:photos)
     else

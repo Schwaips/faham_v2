@@ -17,10 +17,11 @@
 
 <div class="article-show-content">
   <div class="content">
-    <span class="tag tag--secondary align-self-start">  
-      <%= @article.category %>
-    </span>
-
+    <% unless @article.category  == "" %>
+      <span class="tag tag--secondary align-self-start">  
+        <%= @article.category %>
+      </span>
+    <% end %>
     <div class="article-content">
       <%= @article.content %>
     </div>
