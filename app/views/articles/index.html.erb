@@ -7,11 +7,9 @@
 </div>
 
 
-
-
 <div class="articles-container">
   <% @articles.each do |article| %>
-    <%= link_to "#", class: "link-article-card" do %>
+    <%= link_to article_path(article), class: "link-article-card" do %>
       <div class="blog-card">
         <p class="blog-card__publication-date">
           <%= article.publication_date ? article.publication_date&.strftime("%d %B %Y") : " - " %>
