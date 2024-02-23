@@ -22,8 +22,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
   padding: 64px 12px;
   background-color: $primary;
+
+  .link-article-card {
+    text-decoration: none;
+    flex: 1 0 21%; // 4 items per row - 100/4 = 25, minus a bit for margins
+    margin: 12px;
+    max-width: 21%; // To prevent flex-grow to expand items
+
+    @include for-tablet-portrait-up {
+      flex: none; 
+      max-width: 46%;
+    }
+    @include for-phone-only {
+      flex: none;
+      max-width: 100%;
+    }
+  }
 }

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = policy_scope(Article.all)
+    @articles = policy_scope(Article.all).order(publication_date: :desc)
   end
 
   def show
