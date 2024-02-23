@@ -5,3 +5,23 @@
     <!-- <a class="btn btn-flat" href="#">Apply now</a> --> 
   </div>
 </div>
+
+
+
+
+<div class="articles-container">
+
+<% @articles.each do |article| %>
+
+  <div class="blog-card">
+    <%= article.publication_date %>
+    <%#= image_tag article.image, class:"blog-card__image" %>
+    <%= article.title %>
+    <%= article.intro_text %>
+    <%#= article.content %>
+  </div>
+
+<% end %>
+
+
+</div>

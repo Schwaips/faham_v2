@@ -120,7 +120,10 @@ article2 = Article.create!(title: "Coucou", content: "Je suis prêt à entrainer
 file = URI.open('https://p5.storage.canalblog.com/57/71/1380236/106139385.jpg')
 article2.photos.attach(io: file, filename: 'sing.jpg', content_type: 'image/jpg')
 
-article3 = Article.create!(title: "Les chats sont-ils maléfiques?", intro_text: "Chat noir ou chat gris, on décrypte tout.", content: "Chat noir ou chat gris, on décrypte tout.", category: "Chat", author: "Estelle Laboureur", highlight: true)
+article3 = Article.create!(
+  title: "Les chats sont-ils maléfiques?", 
+  intro_text: "Chat noir ou chat gris, on décrypte tout.", 
+  content: "Chat noir ou chat gris, on décrypte tout.", category: "Chat", author: "Estelle Laboureur", highlight: true)
 file = URI.open('https://res.cloudinary.com/faham/image/upload/v1631790189/samples/food/dessert.jpg')
 article3.photos.attach(io: file, filename: 'sardaigne.jpg', content_type: 'image/jpg')
 
