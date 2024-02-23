@@ -17,23 +17,6 @@
   }
 }
 
-
-
-.articles-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 64px 12px;
-  background-color: $primary;
-}
-
-.link-article-card {
-  text-decoration: none;
-}
-
-
 .blog-card {
   display: flex;
   flex-direction: column;
