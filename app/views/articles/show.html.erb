@@ -8,7 +8,7 @@
   </div>
 
   <div class="banner-article-show__description">
-    <span class="quarternary"><%= @article.publication_date&.strftime("%d %B %Y") %></span>
+    <span class="quarternary">Date de publication : <%= @article.publication_date&.strftime("%d/%m/%Y") %></span>
     <h1 class="terracotta"><%= @article.title %></h1>
     <span class="quarternary"><%= @article.author %></span>
   </div>

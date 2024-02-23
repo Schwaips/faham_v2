@@ -12,7 +12,7 @@
     <%= link_to article_path(article), class: "link-article-card" do %>
       <div class="blog-card blog-card--bg-secondary">
         <p class="blog-card__publication-date">
-          <%= article.publication_date ? article.publication_date&.strftime("%d %B %Y") : " - " %>
+          <%= article.publication_date ? article.publication_date&.strftime("%d/%m/%Y") : " - " %>
         </p>
         <div class="blog-card__image">
           <% if article.photos.attached? %>
