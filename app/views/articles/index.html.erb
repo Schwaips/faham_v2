@@ -7,15 +7,19 @@
 </div>
 
 
-<div class="articles-container">
+<div class="articles-container articles-container--background-primary">
   <% @articles.each do |article| %>
     <%= link_to article_path(article), class: "link-article-card" do %>
-      <div class="blog-card">
+      <div class="blog-card blog-card--bg-secondary">
         <p class="blog-card__publication-date">
           <%= article.publication_date ? article.publication_date&.strftime("%d %B %Y") : " - " %>
         </p>
         <div class="blog-card__image">
-          <%= image_tag 'banner-blog.avif' %>
+          <% if article.photos.attached? %>
+            <%= image_tag article.photos.first %>
+          <% else %>
+            <%= image_tag "banner-blog.avif" %>
+          <% end %>
         </div>
           
         <span class="blog-card__title"><%= article.title&.truncate(40) %></span>

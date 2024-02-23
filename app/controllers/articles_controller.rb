@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = authorize Article.find(params[:id])
+    @four_last_articles = Article.last(4)
     @lead = Lead.new
   end
 

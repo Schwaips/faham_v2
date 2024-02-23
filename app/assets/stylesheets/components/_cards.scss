@@ -23,8 +23,13 @@
   width: 274px;
   height: 500px;
   max-height: 500px;
-  background-color: $secondary;
   border-radius: 3px;
+  &--bg-secondary {
+    background-color: $secondary;
+  }
+  &--bg-primary {
+    background-color: $primary;
+  }
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

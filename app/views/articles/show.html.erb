@@ -8,16 +8,16 @@
   </div>
 
   <div class="banner-article-show__description">
-    <span><%= @article.publication_date&.strftime("%d %B %Y") %></span>
+    <span class="quarternary"><%= @article.publication_date&.strftime("%d %B %Y") %></span>
     <h1 class="terracotta"><%= @article.title %></h1>
-    <span><%= @article.author %></span>
+    <span class="quarternary"><%= @article.author %></span>
   </div>
 </div>
 
 
 <div class="article-show-content">
   <div class="content">
-    <span>  
+    <span class="tag tag--secondary align-self-start">  
       <%= @article.category %>
     </span>
 
@@ -29,6 +29,30 @@
 
 
 <div class="more-articles-container">
+  <h1 class="subtitle terracotta">Ces autres articles pourraient vous intéresser</h1>
+  <div class="articles-container">
+    <% @four_last_articles.each do |article| %>
+      <%= link_to article_path(article), class: "link-article-card" do %>
+        <div class="blog-card blog-card--bg-primary">
+          <p class="blog-card__publication-date">
+            <%= article.publication_date ? article.publication_date&.strftime("%d %B %Y") : " - " %>
+          </p>
+          <div class="blog-card__image">
+            <%= image_tag 'banner-blog.avif' %>
+          </div>
+            
+          <span class="blog-card__title"><%= article.title&.truncate(40) %></span>
+          <span class="blog-card__intro-text"><%= article.intro_text&.truncate(80) %></span>
+
+          <p class="blog-card__button-read">
+            Lire la suite
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
   <%= link_to articles_path, class: "button-read" do %>
     Voir plus d'article
   <% end %>

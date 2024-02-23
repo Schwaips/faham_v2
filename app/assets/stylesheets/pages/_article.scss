@@ -54,16 +54,49 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    max-width: 80vw;
+    // max-width: 80vw;
     // centrer le contenu de l'article en le justifiant
     
+  }
+}
+
+.articles-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px;
+  &--background-primary {
+    background-color: $primary;
+  }
+  &--background-secondary {
+    background-color: $secondary;
+  }
+
+  .link-article-card {
+    text-decoration: none;
+    flex: 1 0 21%; // 4 items per row - 100/4 = 25, minus a bit for margins
+    margin: 12px;
+    max-width: 21%; // To prevent flex-grow to expand items
+
+    @include for-tablet-portrait-up {
+      flex: none; 
+      max-width: 46%;
+    }
+    @include for-phone-only {
+      flex: none;
+      max-width: 100%;
+    }
   }
 }
 
 .more-articles-container {
   margin: 12px 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 
   .button-read {
     text-align: center;

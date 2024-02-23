@@ -33,7 +33,30 @@ class Admin::ArticlesController < Admin::DashboardController
   def update
     @article = Article.find(params[:id])
 
-    if @article.update(article_params)
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    
+    puts "params[:article][:photos] #{params[:article][:photos].nil?}"
+    puts "params[:article][:photos] #{params[:article][:photos]}"
+    puts "params[:article][:photos] #{params[:article][:photos] === [""]}"
+    
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    puts "###############"
+    if params[:article][:photos] == [""] || params[:article][:photos].nil?
+      update_params = article_params.except(:photos)
+    else
+      update_params = article_params
+    end
+  
+    if @article.update(update_params)
       redirect_to admin_articles_path, notice: "Article modifié avec succès."
     else
       render :edit, alert: "Veuillez vérifier les erreurs ci-dessous.", status: :unprocessable_entity
