@@ -16,3 +16,38 @@
     <% end %>
   </div>
 </div>
+
+
+<div class="navbar-mobile-container">
+  <div class="navbar-mobile-container__link-container">
+  <%= link_to root_path, class:"navbar-mobile-container__link" do %>
+    <i class="fa-solid fa-house"></i>
+    Accueil
+  <% end %>
+  
+    <%#= link_to "Références scientifiques", root_path %>
+  <%= link_to articles_path, class: "navbar-mobile-container__link" do %>
+    <i class="fa-solid fa-book"></i>
+    Blog
+  <% end %>
+
+  <% if user_signed_in? %>
+    <% if current_user.admin %>
+      <%= link_to "/admin", class: "navbar-mobile-container__link" do %>
+        <i class="fa-solid fa-cog"></i>
+        Admin
+      <% end %>
+    <% end %>
+    <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "navbar-mobile-container__link" do %>
+      <i class="fa-solid fa-sign-out"></i>
+      
+    <% end %>
+  <% end %>
+
+
+
+  </div>
+  
+
+
+</div>
