@@ -11,6 +11,10 @@
 </div>
 
 <div class="articles-container articles-container--background-primary">
+  <% if @articles.empty? %>
+    Articles en cours de rédaction, revenez bientôt !
+  <% end %>
+
   <% @articles.each do |article| %>
     <%= link_to article_path(article), class: "link-article-card" do %>
       <div class="blog-card blog-card--bg-secondary">
