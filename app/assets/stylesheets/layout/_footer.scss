@@ -5,4 +5,7 @@
   background-color: $quarternary;
   color: $white;
   padding: 0px 12px;
+  @include for-phone-only {
+    margin-bottom: 64px;
+  }
 }
