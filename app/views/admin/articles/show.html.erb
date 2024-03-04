@@ -4,6 +4,7 @@
 <%= link_to 'Retour', admin_articles_path %>
   <p><strong>Auteur:</strong> <%= @article.author %></p>
   <p><strong>Date de publication:</strong> <%= @article.publication_date %></p>
+  <p><strong>Categorie</strong>: <%= @article.category %></p>
   <p><strong>Contenu:</strong>
     <div class="article-content">
       <%= @article.content %>

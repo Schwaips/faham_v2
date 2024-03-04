@@ -34,6 +34,7 @@
       <thead>
         <tr>
           <th>Titre</th>
+          <th>Text intro</th>
           <th>Auteur</th>
           <th>Date de publication</th>
           <th></th> <!-- Added column for actions -->
@@ -43,7 +44,8 @@
       <tbody>
         <% @articles.each do |article| %>
           <tr>
-            <td><%= article.title %></td>
+            <td><%= article.title&.truncate(30) %></td>
+            <td><%= article.intro_text&.truncate(30) %></td>
             <td><%= article.author %></td>
             <td><%= article.publication_date&.strftime("%d/%m/%Y") %></td>
             <td>

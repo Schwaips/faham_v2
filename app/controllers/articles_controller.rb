@@ -3,11 +3,13 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = policy_scope(Article.all)
+    @articles = policy_scope(Article.all).order(publication_date: :desc)
   end
 
   def show
     @article = authorize Article.find(params[:id])
+    @four_last_articles = Article.last(4)
+    @lead = Lead.new
   end
 
   # def new

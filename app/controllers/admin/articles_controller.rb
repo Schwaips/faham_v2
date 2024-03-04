@@ -33,7 +33,13 @@ class Admin::ArticlesController < Admin::DashboardController
   def update
     @article = Article.find(params[:id])
 
-    if @article.update(article_params)
+    if params[:article][:photos] == [""] || params[:article][:photos].nil?
+      update_params = article_params.except(:photos)
+    else
+      update_params = article_params
+    end
+  
+    if @article.update(update_params)
       redirect_to admin_articles_path, notice: "Article modifié avec succès."
     else
       render :edit, alert: "Veuillez vérifier les erreurs ci-dessous.", status: :unprocessable_entity
@@ -56,6 +62,6 @@ class Admin::ArticlesController < Admin::DashboardController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :publication_date, :category, :author, photos: [])
+    params.require(:article).permit(:title, :content, :intro_text, :category, :publication_date, :category, :author, photos: [])
   end
 end

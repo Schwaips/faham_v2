@@ -1,0 +1,118 @@
+.banner-article-show {
+  padding: 12px;
+  @include for-phone-only {
+    padding: 0;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__image {
+    height: 300px;
+    object-fit: cover;
+    img {
+      width: 445px;
+      @include for-phone-only {
+        width: 100%;
+      }
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__description {
+    @include for-phone-only {
+      padding: 12px;
+    }
+    h1 {
+      color: $teriary;
+      word-wrap: break-word; // Ajout de cette ligne
+      max-width: 80%; // Ajout de cette ligne
+      font-weight: 400;
+      font-size: 24px;
+      overflow: wrap;
+    }
+
+    span {
+      color: $quarternary;
+      font-size: 12px;
+    }
+  }
+}
+
+.article-show-content {
+  background-color: $primary;
+  padding: 12px 64px;
+  @include for-phone-only {
+    padding: 12px;
+  }
+  margin-top: 12px;
+  min-height: 500px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    // max-width: 80vw;
+    // centrer le contenu de l'article en le justifiant
+    
+  }
+}
+
+.articles-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px;
+  &--background-primary {
+    background-color: $primary;
+  }
+  &--background-secondary {
+    background-color: $secondary;
+  }
+
+  .link-article-card {
+    text-decoration: none;
+    flex: 1 0 21%; // 4 items per row - 100/4 = 25, minus a bit for margins
+    margin: 12px;
+    max-width: 21%; // To prevent flex-grow to expand items
+
+    @include for-tablet-portrait-up {
+      flex: none; 
+      max-width: 46%;
+    }
+    @include for-phone-only {
+      flex: none;
+      max-width: 100%;
+    }
+  }
+}
+
+.more-articles-container {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .button-read {
+    text-align: center;
+    margin: 0px 12px;
+    padding: 12px 6px;
+    color: $teriary;
+    border: 1px solid $teriary;
+    background-color: $primary;
+    text-decoration: none;
+    text-align: center;
+    // align-self: flex-end;
+    margin-top: auto;
+    &:hover {
+      background-color: $teriary;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}

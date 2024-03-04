@@ -1,19 +1,67 @@
-
-<div class="admin-show-page-container">
-
-  <h1><%= @article.title %></h1>
-  <p><strong>Auteur:</strong> <%= @article.author %></p>
-  <p><strong>Date de publication:</strong> <%= @article.publication_date %></p>
-  <p><strong>Catégorie:</strong> <%= @article.content %></p>
-  <p><strong>Lien:</strong> <%= @article.link %></p>
-  <p><strong>Texte d'introduction:</strong> <%= @article.intro_text %></p>
+<% content_for :meta_title, "Faham - #{@article&.title}" %>
+<% content_for :meta_description, "#{@article&.intro_text}" %>
+<% content_for :meta_image, @article.photos.attached? ? @article.photos.first.blob.url : asset_path("banner-blog.avif") %>
 
 
-  <% if @article.photos.attached? %>
-    <div class="photos">
-      <% @article.photos.each do |photo| %>
-        <%= image_tag photo %>
-      <% end %>
+<div class="banner-article-show">
+  <div class="banner-article-show__image">
+    <% if @article.photos.attached? %>
+      <%= image_tag @article.photos.first %>
+    <% else %>
+      <%= image_tag "banner-blog.avif" %>
+    <% end %>
+  </div>
+
+  <div class="banner-article-show__description">
+    <span class="quarternary">Date de publication : <%= @article.publication_date&.strftime("%d/%m/%Y") %></span>
+    <h1 class="terracotta"><%= @article.title %></h1>
+    <span class="quarternary"><%= @article.author %></span>
+  </div>
+</div>
+
+
+<div class="article-show-content">
+  <div class="content">
+    <% unless @article.category  == "" %>
+      <span class="tag tag--secondary align-self-start">  
+        <%= @article.category %>
+      </span>
+    <% end %>
+    <div class="article-content">
+      <%= @article.content %>
     </div>
+  </div>
+</div>
+
+
+<div class="more-articles-container">
+  <h1 class="subtitle terracotta">Ces autres articles pourraient vous intéresser</h1>
+  <div class="articles-container">
+    <% @four_last_articles.each do |article| %>
+      <%= link_to article_path(article), class: "link-article-card" do %>
+        <div class="blog-card blog-card--bg-primary">
+          <p class="blog-card__publication-date">
+            <%= article.publication_date ? article.publication_date&.strftime("%d/%m/%Y") : " - " %>
+          </p>
+          <div class="blog-card__image">
+            <%= image_tag 'banner-blog.avif' %>
+          </div>
+            
+          <span class="blog-card__title"><%= article.title&.truncate(40) %></span>
+          <span class="blog-card__intro-text"><%= article.intro_text&.truncate(80) %></span>
+
+          <p class="blog-card__button-read">
+            Lire la suite
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <%= link_to articles_path, class: "button-read" do %>
+    Voir plus d'articles
   <% end %>
 </div>
+
+<%= render "pages/shared_home/section_contact_form" %>

@@ -1,8 +1,37 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "Faham - Blog" %>
+<% content_for :meta_description, "Tous mes articles - publication régulière" %>
 
-<div class="flex flex-col align-center justify-center">  
+<div class="secondary-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner-blog.avif') %>);">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Bonne lecture et joie d’échanger avec vous.</p>
+    <!-- <a class="btn btn-flat" href="#">Apply now</a> --> 
+  </div>
+</div>
 
+<div class="articles-container articles-container--background-primary">
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article), class: "link-article-card" do %>
+      <div class="blog-card blog-card--bg-secondary">
+        <p class="blog-card__publication-date">
+          <%= article.publication_date ? article.publication_date&.strftime("%d/%m/%Y") : " - " %>
+        </p>
+        <div class="blog-card__image">
+          <% if article.photos.attached? %>
+            <%= image_tag article.photos.first %>
+          <% else %>
+            <%= image_tag "banner-blog.avif" %>
+          <% end %>
+        </div>
+          
+        <span class="blog-card__title"><%= article.title&.truncate(40) %></span>
+        <span class="blog-card__intro-text"><%= article.intro_text&.truncate(80) %></span>
 
-<h1>Cette section est en cours de construction</h1>
-<%= link_to "Retour à l'accueil", root_path %>
-
+        <p class="blog-card__button-read">
+          Lire la suite
+        </p>
+      </div>
+    <% end %>
+  <% end %>
 </div>
