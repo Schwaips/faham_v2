@@ -21,6 +21,15 @@
     color: $black;
     justify-content: space-between;
     align-items: center;
+    a {
+      text-decoration: none;
+      &.active {
+        background-color: $secondary;
+        padding: 2px 8px;
+        color: $teriary;
+        border-radius: 8px;
+      }
+    }
   }
 
   svg {
@@ -53,10 +62,15 @@
 
   &__link {
     display: flex;
-    padding-top: 12px;
+    padding: 8px 8px 0px 8px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    &.active {
+      background-color: $secondary;
+      color: $teriary;
+      border-radius: 8px;
+    }
   }
 }
