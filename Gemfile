@@ -66,6 +66,11 @@ gem "cloudinary"
 # traditional one-line-per-event format
 gem "lograge"
 
+
+# captcha
+gem 'invisible_captcha'
+
+
 # Authentication
 gem "devise"
 
