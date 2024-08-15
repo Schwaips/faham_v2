@@ -54,9 +54,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    max-width: 100%;
     // max-width: 80vw;
     // centrer le contenu de l'article en le justifiant
     
+  }
+  .article-content {
+    .trix-content img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .trix-content iframe {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 
