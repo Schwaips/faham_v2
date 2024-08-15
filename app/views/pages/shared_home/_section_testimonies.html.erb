@@ -5,7 +5,7 @@
     <div class="splide__track">
       <ul class="splide__list">
 
-        <% @testimonies.each do |testimony| %>
+        <% @testimonies&.each do |testimony| %>
           <li class="splide__slide">
               <div class="slide-container">
                   <%#= image_tag "big-quote" %>
